@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n nav_tags %}
+
+{% block media %}
+{{ block.super }}
+<link href="{% url media "theme/flat.css" %}" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
+{% block title %}{{ flatpage.title }}{% endblock %}
+
+{% block content %}
+<div class="flat">
+{% render_template flatpage.content %}
+</div>
+{% endblock %}

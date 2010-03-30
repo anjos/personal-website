@@ -1,0 +1,53 @@
+{% load i18n nav_tags %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>{{ site.name }} :: {% block title %} NO TITLE? {% endblock %}</title>
+    <link rel="icon" href="{% url media "favicon.ico" %}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{% url media "favicon.ico" %}" type="image/x-icon"/>
+
+    {% block media %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="{% url media "project/css/style.css" %}" />
+  </head>
+
+  <body>
+    <div id="header">
+      <a href="/" title="{% trans "Click here to get back to the start page" %}"><h1>{{ site.name }}</h1></a>
+    </div>
+
+
+    <div id="margins">
+
+      <div id="menu"> 
+        {% if user.is_authenticated %}
+        <span class="userinfo">logged in as: <span class="username">{{ user.get_full_name|lower }}</span> (<span class="email">{{ user.email|lower }}</span>)</span>
+        <span class="admin"><a href="{% url bitrepo:index %}"><img src="{% url media "bitrepo/img/png/16/bittorrent.png" %}" align="top" title="{% trans "torrents" %}" alt="{% trans "torrents" %}"/></a></span>
+        {% endif %}
+        {% if user.is_staff %}
+        <span class="admin"><a href="{% url admin:index %}"><img src="{% url media "extras/tango/16x16/categories/preferences-system.png" %}" align="top" title="{% trans "administration panel" %}" alt="{% trans "admin" %}"/></a></span>
+        <span class="admin"><a href="{% url audit:index %}"><img src="{% url media "extras/tango/16x16/status/dialog-information.png" %}" align="top" title="{% trans "website statistics" %}" alt="{% trans "statistics" %}"/></a></span>
+        {% endif %}
+        {% for item in navigation %}
+        <span class="item"><a href="{% render_template item.url %}" title="{% item_trans item "description" LANGUAGE_CODE %}">{% item_trans item "name" LANGUAGE_CODE %}</a></span>
+        {% endfor %}
+        {% if user.is_authenticated %}
+        <span class="admin"><a href="{% url logout %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/system-log-out.png" %}" align="top" title="{% trans "logout" %}" alt="{% trans "logout" %}"/></a></span>
+        {% else %}
+        <span class="admin"><a title="{% trans "go to my professional website" %}" href="http://andreanjos.org"><img src="http://andreanjos.org/media/favicon.ico" width="16" height="16"/></a>
+        <span class="admin"><a title="{% trans "login using your Google account" %}" href="/openid/login/?next={{ full_path }}"><img src="http://www.google.com/favicon.ico" width="16" height="16"/></a>
+        <span class="admin"><a href="{% url login %}?next={{ full_path }}"><img src="{% url media "extras/tango/16x16/actions/go-next.png" %}" align="top" title="{% trans "login with a standard username and password" %}" alt="{% trans "login" %}"/></a></span>
+        {% endif %}
+      </div><!-- ends "menu" -->
+
+      <div id="content">
+        {% block content %} NO CONTENT? {% endblock %}
+      </div><!-- ends content -->
+    </div><!-- ends margins -->
+
+    <div id="footer">
+      <p>(c) {% now "Y" %} André Anjos</p>
+    </div>
+
+  </body>
+
+</html>

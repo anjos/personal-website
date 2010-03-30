@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n djangoogle_tags %}
+{% block media %}
+  {{ block.super }}
+  {% djangoogle_last_media %}
+  <link href="{% url media "project/css/home.css" %}" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+{% block title %}{% trans "Home Page" %}{% endblock %}
+
+{% block content %}
+<p>{% trans "No content available yet... Stay posted!" %}</p>
+{% endblock %}
