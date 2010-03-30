@@ -282,3 +282,6 @@ tr.odd, td.odd {
   font-weight: bold;
 }
 
+.bitrepo table.packages img {
+  border: none;
+}
