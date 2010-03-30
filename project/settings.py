@@ -89,7 +89,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
     'multilingual.flatpages.middleware.FlatpageFallbackMiddleware',
-    #'audit.middleware.Activity',
+    'audit.middleware.Activity',
     #'django.middleware.cache.FetchFromCacheMiddleware',
 )
 

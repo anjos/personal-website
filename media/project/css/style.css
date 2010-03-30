@@ -129,6 +129,16 @@ div.actions a:hover {
   text-decoration: underline;
 }
 
+/* For tables */
+tr.even, td.even {
+  background-color: #cef;
+}
+
+tr.odd, td.odd {
+  background-color: #eee;
+}
+
+
 /* Menu */
 #menu {
 	text-align: right;
@@ -250,5 +260,25 @@ div.actions a:hover {
 .bitrepo .pagination a {
   text-decoration: none;
   color: #333;
+}
+
+.bitrepo table.packages {
+  width: 100%;
+}
+
+.bitrepo table.packages td {
+  color: #3c3230;
+  font-size: 0.9em;
+}
+
+.bitrepo table.packages tr th {
+  background-color: #3c3230;
+  color: white;
+  font-style: italic;
+}
+
+.bitrepo table.packages td.name {
+  width: 50%;
+  font-weight: bold;
 }
 
