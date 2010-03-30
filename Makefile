@@ -2,7 +2,7 @@
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
 # This you must set correctly
-RSYNC_MASTER='andreps@andreanjos.org:andreanjos.org'
+RSYNC_MASTER='andreps@andreanjos.org:my.andreanjos.org'
 RSYNC=rsync --rsh=ssh --recursive --times --perms --owner --group --verbose --compress
 
 all: bootstrap test
