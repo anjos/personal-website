@@ -262,26 +262,30 @@ tr.odd, td.odd {
   color: #333;
 }
 
-.bitrepo table.packages {
+.bitrepo table.movies {
   width: 100%;
 }
 
-.bitrepo table.packages td {
+.bitrepo table.movies td {
   color: #3c3230;
   font-size: 0.9em;
 }
 
-.bitrepo table.packages tr th {
+.bitrepo table.movies tr th {
   background-color: #3c3230;
   color: white;
   font-style: italic;
 }
 
-.bitrepo table.packages td.name {
+.bitrepo table.movies td.name {
   width: 50%;
   font-weight: bold;
 }
 
-.bitrepo table.packages img {
+.bitrepo table.movies td.year {
+  font-weight: bold;
+}
+
+.bitrepo table.movies img {
   border: none;
 }
