@@ -9,11 +9,12 @@ BASEDIR = os.path.dirname(os.path.dirname(__file__))
 INSTALLDIR = os.path.join(BASEDIR, 'project') 
 DATABASE = os.path.join(BASEDIR, 'db.sql3')
 
+# mail settings for adminstration and management bussiness
 ADMINS = (
     ('Andre Anjos', 'andre.dos.anjos@gmail.com'),
 )
-
 MANAGERS = ADMINS
+DEFAULT_FROM_EMAIL = '%s <%s>' % ADMINS[0]
 
 DATABASE_ENGINE = 'sqlite3'    # 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
 DATABASE_NAME = DATABASE       # Or path to database file if using sqlite3.
