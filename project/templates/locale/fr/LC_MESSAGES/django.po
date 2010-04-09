@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-09 15:58+0200\n"
+"POT-Creation-Date: 2010-04-09 16:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,10 @@ msgstr ""
 #: base.html:15
 msgid "Click here to get back to the start page"
 msgstr "Clique ici pour revenir à là page d'accueil"
+
+#: base.html:23
+msgid "logged in as"
+msgstr "connecté comme"
 
 #: home.html:8
 msgid "Home Page"

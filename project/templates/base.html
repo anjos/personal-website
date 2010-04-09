@@ -20,7 +20,7 @@
 
       <div id="menu"> 
         {% if user.is_authenticated %}
-        <span class="userinfo">logged in as: <span class="username">{{ user.get_full_name|lower }}</span> (<span class="email">{{ user.email|lower }}</span>)</span>
+        <span class="userinfo">{% trans "logged in as" %}: <span class="username">{{ user.get_full_name|lower }}</span> (<span class="email">{{ user.email|lower }}</span>)</span>
         {% endif %}
         {% menu_items for user as items %}
         {% for item in items %}
