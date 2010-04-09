@@ -24,7 +24,7 @@
   </div>
   <div class="submit-row">
     <label>&nbsp;</label><input type="submit" value="{% trans 'Log in' %}" />
-    <span class="admin"><a title="{% trans "login using your Google account" %}" href="/openid/login/?next={{ full_path }}"><img src="http://www.google.com/favicon.ico" width="16" height="16"/></a>
+    <span class="admin"><a title="{% trans "login using your Google account" %}" href="/openid/login/?next={% if request.GET.next %}{{ request.GET.next }}{% else %}/{% endif %}"><img src="http://www.google.com/favicon.ico" width="16" height="16"/></a>
   </div>
 </form>
 
