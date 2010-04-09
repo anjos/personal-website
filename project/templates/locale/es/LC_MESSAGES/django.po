@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-17 16:33+0100\n"
+"POT-Creation-Date: 2010-04-09 15:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,131 +16,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: base.html:23 base.html.py:26
+#: base.html:15
 msgid "Click here to get back to the start page"
 msgstr ""
 
-#: base.html:31
-msgid "Signal Processing Engineer, Ph.D."
-msgstr ""
-
-#: base.html:37
-msgid "logged in as: "
-msgstr ""
-
-#: base.html:44
-msgid "administration panel"
-msgstr ""
-
-#: base.html:44
-msgid "admin"
-msgstr ""
-
-#: base.html:45
-msgid "website statistics"
-msgstr ""
-
-#: base.html:45
-msgid "statistics"
-msgstr ""
-
-#: base.html:51
-msgid "logout"
-msgstr ""
-
-#: base.html:53
-msgid "login using your Google account"
-msgstr ""
-
-#: base.html:54
-msgid "login with a standard username and password"
-msgstr ""
-
-#: base.html:54
-msgid "login"
-msgstr ""
-
-#: home.html:13
+#: home.html:8
 msgid "Home Page"
 msgstr ""
 
-#: home.html:20
-msgid "Latest publications"
+#: home.html:11
+msgid "No content available yet... Stay posted!"
 msgstr ""
 
-#: home.html:35
-msgid "Latest software changes"
-msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:6 djangoogle/picasaweb_gallery.html:19
-msgid "Photo Gallery"
-msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:22
-msgid ""
-"From this page you can access our photo albums. Click on the arrows bellow "
-"to go back in history."
-msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:30
-msgid "Click here to launch a slideshow of this album"
-msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:33
-msgid "Click here to view this album directly inside PicasaWeb"
-msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:33
-msgid "PicasaWeb"
-msgstr ""
-
-#: djangoogle/picasaweb_gallery.html:38
+#: admin/base_site.html:9
 #, python-format
-msgid "%(numphotos)s photo%(plural)s by"
+msgid "%(domain)s"
 msgstr ""
 
-#: djangoogle/picasaweb_gallery.html:39
-msgid "published"
+#: admin/base_site.html:12
+msgid "click here to go back to the front page"
 msgstr ""
 
-#: djangoogle/picasaweb_gallery.html:40
-msgid "updated"
+#: admin/login.html:19
+msgid "Username:"
 msgstr ""
 
-#: djangoogle/picasaweb_gallery.html:48
-msgid "Cannot connect to PicasaWeb service."
+#: admin/login.html:22
+msgid "Password:"
 msgstr ""
 
-#: djangoogle/youtube_gallery.html:7 djangoogle/youtube_gallery.html.py:20
-msgid "Video Gallery"
+#: admin/login.html:26
+msgid "Log in"
 msgstr ""
 
-#: djangoogle/youtube_gallery.html:24
+#: admin/login.html:27
+msgid "login using your Google account"
+msgstr ""
+
+#: openid/failure.html:3 openid/failure.html.py:6
+msgid "OpenID authentication failed"
+msgstr ""
+
+#: openid/failure.html:13
 msgid ""
-"From this page you can access all videos registered. Click on the arrows "
-"bellow to go back in history."
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:35
-msgid "Click here to view this video directly inside YouTube"
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:35
-msgid "YouTube"
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:40
-msgid "seconds"
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:41
-msgid "Playlist"
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:41
-msgid "Click here to only view videos from this playlist"
-msgstr ""
-
-#: djangoogle/youtube_gallery.html:49
-msgid "Cannot connect to YouTube service at"
+"If you believe this is an error, please ask the adminstrator to add it to "
+"the appropriate account."
 msgstr ""
