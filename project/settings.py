@@ -79,7 +79,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   'project.context_processors.site', #for site
   'project.context_processors.full_path', #for the full_path
   'nav.context_processors.navigation', #for our menus
-  'multilingual.context_processors.multilingual', #for multilingual
 )
 
 MIDDLEWARE_CLASSES = (
