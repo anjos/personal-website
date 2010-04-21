@@ -20,7 +20,7 @@ PACKAGES = [
     'django-robots',
     'python-openid',
     'django-openid-auth',
-    'django-multilingual',
+    'django-flatties',
     'django-bitrepo',
     ]
 SOURCES = [

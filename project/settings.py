@@ -89,7 +89,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
-    'multilingual.flatpages.middleware.FlatpageFallbackMiddleware',
     'audit.middleware.Activity',
     #'django.middleware.cache.FetchFromCacheMiddleware',
 )
@@ -121,12 +120,11 @@ INSTALLED_APPS = (
   'audit',
   'nav',
   'bitrepo',
+  'flatties',
 
   # Other projects
   'robots',
   'django_openid_auth',
-  'multilingual',
-  'multilingual.flatpages',
 )
 
 # Controls how many albums per page to see

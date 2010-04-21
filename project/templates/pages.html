@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load flatties_tags %}
+
+{% block media %}
+{{ block.super }}
+{% endblock %}
+
+{% block title %}{% get_title object LANGUAGE_CODE %}{% endblock %}
+
+{% block content %}
+<div class="flat">
+{% get_content object LANGUAGE_CODE %}
+</div>
+{% endblock %}
