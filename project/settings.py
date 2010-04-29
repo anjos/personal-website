@@ -120,6 +120,8 @@ INSTALLED_APPS = (
   'nav',
   'bitrepo',
   'flatties',
+  'djpro',
+  'djit',
 
   # Other projects
   'robots',
