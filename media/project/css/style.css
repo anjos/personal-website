@@ -1,98 +1,227 @@
-/* Simple CSS for our SW pages */
-
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #f8f5ec;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  color: #a19d9a;
+	margin: 0px;
+	padding: 0;
+	background: #EDE7DB url(../img/background.png) repeat-x left top;
+	text-align: justify;
+	font-family:  Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #696969;
+}
+
+h1, h2, h3 {
+	margin-top: 0;
+}
+
+h1 {
+	font-size: 1.6em;
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 1.6em;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+ul {
+}
+
+a {
+	text-decoration: none;
+	color: #696969;
+}
+
+a:hover {
+	border-bottom: none;
+}
+
+a img {
+	border: none;
+}
+
+img.left {
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+img.right {
+	float: right;
+	margin: 0 0 0 20px;
+}
+
+#header-wrapper {
+	width: 100%;
+	height: 150px;
 }
 
 #header {
-  background-color: #3c3230;
-  height: 80px;
-  font-size: 18px;
-  border-bottom: 15px solid #4f4440;
-  width: 100%;
+	width: 960px;
+	margin: 0 auto;
+	height: 150px;
 }
 
-#header h1 {
-  /* order is top right bottom left */
-  width: 900px;
-  margin: 0px auto 0px auto;
-  text-align: left;
-  padding: 20px;
+/* Header */
+
+#logo {
+	width: 960px;
+	height: 150px;
+	margin: 0 auto;
 }
 
-#header a {
-  text-decoration: none;
-  color: white;
-  margin: 0;
-  padding: 0;
+#logo h1, #logo p {
+	margin: 0;
+	padding-left: 100px;
+	color: #FFFFFF;
 }
 
-#header a:hover {
-  color: #f8f5aa;
+#logo span {
+	color: #FFFFFF;
 }
 
-#margins {
-  margin: 0px;
-  padding: 0px;
+#logo h1 {
+	padding: 25px 0 0 0;
+	letter-spacing: -1px;
+	text-transform: lowercase;
+	font-weight: normal;
+	font-size: 4.8em;
 }
 
-#menu {
-  border: solid #3c3230 1px;
-  color: #333;
-  /* order is top right bottom left */
-  width: 900px;
-  margin: 10px auto 10px auto;
-  padding: 10px;
-  text-align: right;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-raidus: 5px;
+#logo p {
+	text-transform: lowercase;
+	padding: 4px 0 0 3px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 22px;
+	color: #FFFFFF;
 }
 
-#menu .userinfo {
-  font-size: 0.9em;
-  color: #555;
+#logo a {
+	border: none;
+	text-decoration: none;
+	color: #FFFFFF;
 }
 
-#menu .username {
-  font-weight: bold;
+/* Wrapper */
+
+#wrapper {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
 }
 
-#menu .email {
-  font-style: italic;
+/* Page */
+
+#page {
+	width: 960px;
+	margin: 0px auto;
+	padding: 0px;
+	background-color: #fff;
 }
 
-#menu #admin img {
-  vertical-align: text-top;
+#page-bottom {
+	padding: 0px 20px;
 }
 
 #content {
-  background-color: white;
-  color: #333;
-  /* order is top right bottom left */
-  width: 900px; 
-  margin: 0px auto 0px auto;
-  padding: 10px;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-raidus: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Footer */
+
+#footer-wrapper {
+	width: 100%;
+	height: 100px;
 }
 
 #footer {
+	width: 920px;
 	height: 50px;
+	margin: 0 auto;
+	padding: 0 20px;
+	background: #220;
+  border-bottom-left-radius: 1em;
+  -webkit-bottom-left-border-radius: 1em;
+  -moz-border-radius-bottomleft: 1em;
+  border-bottom-right-radius: 1em;
+  -webkit-bottom-right-border-radius: 1em;
+  -moz-border-radius-bottomright: 1em;
 }
 
 #footer p {
 	margin: 0;
-	padding-top: 10px;
+	padding: 20px 0 0 0;
 	text-align: center;
-  color: #777;
-  font-style: italic;
+	font-size: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #696969;
+}
+
+/* Menu */
+#menu-wrapper {
+	width: 920px;
+	margin: 0 auto;
+	height: 35px;
+	padding: 0px 20px;
+	background: url(../img/menu.png) repeat-x left top;
+	text-align: right;
+  border-top-left-radius: 1em;
+  -webkit-top-left-border-radius: 1em;
+  -moz-border-radius-topleft: 1em;
+  border-top-right-radius: 1em;
+  -webkit-top-right-border-radius: 1em;
+  -moz-border-radius-topright: 1em;
+}
+
+#menu {
+  padding-top: 11px;
+}
+
+#menu .item a {
+  background-color: #f96;
+  border: 1px solid #f96;
+  color: white;
+	padding: 0px 6px 0px 6px; /* top right bottom left */
+}
+
+#menu .item a:hover {
+  background-color: #c33;
+  border: 1px solid #c33;
+  border-style: inset;
+}
+
+#menu .admin img {
+  border: none;
+  background: none;
+  padding: 0px;
+  margin: 0px;
+  vertical-align: top;
+}
+
+#menu a {
+	text-decoration: none;
+	font-size: 13px;
+	color: #fff;
+}
+
+#menu a:hover {
+	text-decoration: none;
+}
+
+#menu {
+  vertical-align: bottom;
+  text-align: right;
+}
+
+#menu .userinfo {
+  color: #fff;
+  margin-bottom: 5px;
+  margin-right: 20px;
+}
+
+#menu .userinfo .username {
+  font-weight: bold;
 }
 
 /* From this poin onwards, we have elements that are required
@@ -136,65 +265,6 @@ tr.even, td.even {
 
 tr.odd, td.odd {
   background-color: #eee;
-}
-
-
-/* Menu */
-#menu {
-	text-align: right;
-  vertical-align: bottom;
-}
-
-#menu .item a {
-  background-color: #6e9d00;
-  border-color: #6e9d00;
-  color: white;
-  font-size: 0.8em;
-  border-width: 1px;
-  border-style: outset;
-	padding: 1px 8px 1px 8px; /* top right bottom left */
-}
-
-#menu .item a:hover {
-  border-style: inset;
-}
-
-#menu .admin img {
-  border: none;
-  background: none;
-  padding: 0px;
-  margin: 0px;
-  vertical-align: text-top;
-}
-
-#menu a {
-	text-decoration: none;
-	font-size: 13px;
-	color: #FFFFFF;
-}
-
-#menu a:hover {
-	text-decoration: none;
-}
-
-#menu {
-  vertical-align: bottom;
-  text-align: right;
-}
-
-#menu #user p {
-  color: #eee;
-  font-size: 0.9em;
-  margin-bottom: 5px;
-  margin-right: 20px;
-}
-
-#menu #user p .username {
-  font-weight: bold;
-}
-
-#menu #user p .email {
-  font-style: italic;
 }
 
 /** For our bitrepo module **/

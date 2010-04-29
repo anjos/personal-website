@@ -11,31 +11,44 @@
   </head>
 
   <body>
-    <div id="header">
-      <a href="/" title="{% trans "Click here to get back to the start page" %}"><h1>{{ site.name }}</h1></a>
-    </div>
+    <div id="header-wrapper">
+      <div id="header">
+        <div id="logo">
+          <a href="/" title="{% trans "Click here to get back to the start page" %}">
+            <h1>{{ site.name }}</h1>
+            <p>{% trans "hanging on the net..." %}
+          </a>
+        </div><!-- ends logo -->
+      </div><!-- ends header -->
+    </div><!-- ends header-wrapper -->
 
 
-    <div id="margins">
-
+    <div id="menu-wrapper">
       <div id="menu"> 
         {% if user.is_authenticated %}
-        <span class="userinfo">{% trans "logged in as" %}: <span class="username">{{ user.get_full_name|lower }}</span> (<span class="email">{{ user.email|lower }}</span>)</span>
+        <span class="userinfo">{% trans "logged in as" %}: <span class="username" title="{{ user.get_full_name|lower }}">{{ user.email|lower }}</span>
         {% endif %}
         {% menu_items for user as items %}
         {% for item in items %}
         <span class="{% if item.has_image %}admin{% else %}item{% endif %}"><a href="{% item_url item %}" title="{% get_description item LANGUAGE_CODE %}">{% if item.has_image %}<img src="{{ item.get_image_url }}" height="{{ item.image_height }}" width="{{ image.image_width }}" alt="{% get_name item LANGUAGE_CODE %}"/>{% else %}{% get_name item LANGUAGE_CODE %}{% endif %}</a></span>
         {% endfor %}
       </div><!-- ends "menu" -->
+    </div><!-- ends menu-wrapper -->
 
-      <div id="content">
-        {% block content %} NO CONTENT? {% endblock %}
-      </div><!-- ends content -->
-    </div><!-- ends margins -->
+    <div id="page">
+      <div id="page-bottom">
+        <div id="content">
+          {% block content %} NO CONTENT? {% endblock %}
+        </div><!-- ends content -->
+      </div><!-- ends page-bottom -->
+    </div><!-- ends page -->
 
-    <div id="footer">
-      <p>(c) {% now "Y" %} André Anjos</p>
-    </div>
+
+    <div id="footer-wrapper">
+      <div id="footer">
+        <p>(c) {% now "Y" %} André Anjos</p>
+      </div><!-- ends footer -->
+    </div><!-- ends footer-wrapper -->
 
   </body>
 
