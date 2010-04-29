@@ -224,6 +224,10 @@ img.right {
   font-weight: bold;
 }
 
+#menu .userinfo .username:hover {
+  color: #220;
+}
+
 /* From this poin onwards, we have elements that are required
  * for every web page in this website
  */
