@@ -5,8 +5,8 @@ sw
 django.mo
 .*.swp
 db.sql3
-media/publications
 media/projects
+media/menus
 scripts/bootstrap.py
 scripts/ez_setup.py
 scripts/sw
