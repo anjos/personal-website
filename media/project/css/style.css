@@ -449,7 +449,8 @@ table.highlighttable td.code .highlight pre {
   text-align: center;
 }
 
-.djit table.list {
-  font-size: 98%;
+.djit .list {
+  font-size: 150%;
+  margin-left: auto;
+  margin-right: auto;
 }
-
