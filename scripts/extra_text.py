@@ -23,6 +23,7 @@ PACKAGES = [
     'django-flatties',
     'django-bitrepo',
     'djpro',
+    'django-maintenancemode',
     ]
 SOURCES = [
     #('git+http://github.com/simonw/django-openid.git', 'django-openid'),
