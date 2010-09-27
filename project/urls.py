@@ -6,7 +6,6 @@ import djangoogle.urls
 import bitrepo.urls
 import flatties.urls
 import djit.urls
-import djpro.urls
 
 admin.autodiscover()
 
@@ -14,7 +13,6 @@ urlpatterns = patterns('',
     url(r'^admin/', admin.site.urls),
     url(r'^google/', djangoogle.urls.namespaced),
     url(r'^git/', djit.urls.namespaced),
-    url(r'^project/', djpro.urls.namespaced),
     url(r'^audit/', audit.urls.namespaced),
     url(r'^openid/', include('django_openid_auth.urls')),
     url(r'^pages/', flatties.urls.namespaced),
