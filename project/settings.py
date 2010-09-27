@@ -87,10 +87,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'maintenancemode.middleware.MaintenanceModeMiddleware',
     'django.middleware.doc.XViewMiddleware',
     'audit.middleware.Activity',
     'django.middleware.cache.FetchFromCacheMiddleware',
+    'maintenancemode.middleware.MaintenanceModeMiddleware',
 )
 
 AUTHENTICATION_BACKENDS = (
