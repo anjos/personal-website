@@ -24,6 +24,7 @@ PACKAGES = [
     'django-bitrepo',
     'djpro',
     'django-maintenancemode',
+    'mysql-python',
     ]
 SOURCES = [
     #('git+http://github.com/simonw/django-openid.git', 'django-openid'),
