@@ -160,4 +160,4 @@ OPENID_USE_AS_ADMIN_LOGIN = True
 # OPENID_CREATE_USERS = True
 
 # For the maintenance mode middleware
-MAINTENANCE_MODE = True
+#MAINTENANCE_MODE = True
