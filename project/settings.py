@@ -7,7 +7,6 @@ import os
 # These locations are calculated based on the settings.py location
 BASEDIR = os.path.dirname(os.path.dirname(__file__))
 INSTALLDIR = os.path.join(BASEDIR, 'project') 
-DATABASE = os.path.join(BASEDIR, 'db.sql3')
 
 # mail settings for adminstration and management bussiness
 ADMINS = (
@@ -16,12 +15,20 @@ ADMINS = (
 MANAGERS = ADMINS
 DEFAULT_FROM_EMAIL = '%s <%s>' % ADMINS[0]
 
-DATABASE_ENGINE = 'sqlite3'    # 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
-DATABASE_NAME = DATABASE       # Or path to database file if using sqlite3.
-DATABASE_USER = ''             # Not used with sqlite3.
-DATABASE_PASSWORD = ''         # Not used with sqlite3.
-DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
-DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
+DATABASES = {
+    #'local': {
+    #  'ENGINE': 'django.db.backends.sqlite3', 
+    #  'NAME': os.path.join(BASEDIR, 'db.sql3')
+    #  },
+    'default': {
+      'ENGINE': 'django.db.backends.mysql',
+      'NAME': 'aa_personal_website',
+      'USER': 'aadjadmin',
+      'PASSWORD': 'xzb77yhH',
+      'HOST': 'mysql.andreanjos.org',
+      'PORT': '3306',
+      },
+    }
 
 # Local time zone for this installation. All choices can be found here:
 # http://www.postgresql.org/docs/current/static/datetime-keywords.html#DATETIME-TIMEZONE-SET-TABLE
