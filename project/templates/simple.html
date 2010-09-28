@@ -1,0 +1,48 @@
+{% load i18n %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>{% block title %} NO TITLE? {% endblock %}</title>
+    <link rel="icon" href="{% url media "favicon.ico" %}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{% url media "favicon.ico" %}" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="{% url media "project/css/style.css" %}" />
+  </head>
+
+  <body>
+    <div id="header-wrapper">
+      <div id="header">
+        <div id="logo">
+          <a href="/" title="{% trans "Click here to get back to the start page" %}">
+            <h1>{% block header %} NO TITLE? {% endblock %}</h1>
+          </a>
+        </div><!-- ends logo -->
+      </div><!-- ends header -->
+    </div><!-- ends header-wrapper -->
+
+    <div id="menu-wrapper">
+      <div id="menu"> 
+      </div><!-- ends "menu" -->
+    </div><!-- ends menu-wrapper -->
+
+    <div id="page">
+      <div id="page-bottom">
+        <div id="content">
+        {% block content %}
+        <p> NO CONTENTS? </p>
+        {% endblock %}
+        </div><!-- ends content -->
+      </div><!-- ends page-bottom -->
+    </div><!-- ends page -->
+
+
+    <div id="footer-wrapper">
+      <div id="footer">
+        <p>(c) {% now "Y" %} André Anjos</p>
+      </div><!-- ends footer -->
+    </div><!-- ends footer-wrapper -->
+
+  </body>
+
+</html>
+
+<html>
