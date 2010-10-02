@@ -4,6 +4,7 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 SEND_BROKEN_LINK_EMAILS = True
 import os
+from project.dbconfig import DATABASES
 
 # These locations are calculated based on the settings.py location
 BASEDIR = os.path.dirname(os.path.dirname(__file__))
@@ -15,21 +16,6 @@ ADMINS = (
 )
 MANAGERS = ADMINS
 DEFAULT_FROM_EMAIL = '%s <%s>' % ADMINS[0]
-
-DATABASES = {
-    #'local': {
-    #  'ENGINE': 'django.db.backends.sqlite3', 
-    #  'NAME': os.path.join(BASEDIR, 'db.sql3')
-    #  },
-    'default': {
-      'ENGINE': 'django.db.backends.mysql',
-      'NAME': 'aa_personal_website',
-      'USER': 'aadjadmin',
-      'PASSWORD': 'xzb77yhH',
-      'HOST': 'mysql.andreanjos.org',
-      'PORT': '3306',
-      },
-    }
 
 # Local time zone for this installation. All choices can be found here:
 # http://www.postgresql.org/docs/current/static/datetime-keywords.html#DATETIME-TIMEZONE-SET-TABLE

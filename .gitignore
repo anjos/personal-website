@@ -16,3 +16,4 @@ cache/
 media/packages
 backup/
 favicon.*
+project/dbconfig.py
