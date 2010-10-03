@@ -21,6 +21,6 @@ def logout(request):
   if request.GET.has_key('next'): 
     next = request.GET['next']
   else: 
-    next = reverse('project-index')
+    next = reverse('site-index')
   if not next.strip(): next = '/'
   return HttpResponseRedirect(next)

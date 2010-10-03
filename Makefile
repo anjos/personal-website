@@ -5,20 +5,24 @@
 RSYNC_MASTER='andreps@andreanjos.org:my.andreanjos.org'
 RSYNC=rsync --rsh=ssh --recursive --times --perms --owner --group --verbose --compress
 PYTHON=python2.6
+LANGUAGES=en pt_BR fr es
 
-all: bootstrap test
+# A few helpers -- don't modify!
+admin=sw/bin/djm $(1)
 
-.PHONY: clean restart mrproper generate_bootstrap bootstrap upgrade 
+all: bootstrap 
+
+.PHONY: clean restart mrproper generate_bootstrap bootstrap upgrade strings compile shell dbshell syncdb 
 
 generate_bootstrap:
-	$(MAKE) --directory=scripts generate
+	$(MAKE) --directory=installer generate
 
 bootstrap: generate_bootstrap
-	@./scripts/bootstrap.py --quiet --no-site-packages --python=$(PYTHON) sw
+	@./installer/bootstrap.py --quiet --python=$(PYTHON) sw
 	@cd sw/lib && if [ ! -L current ]; then ln -s $(PYTHON) current; fi && cd -
 
 upgrade:
-	@./scripts/bootstrap.py --quiet --no-site-packages --python=$(PYTHON) --upgrade sw
+	@./installer/bootstrap.py --quiet --python=$(PYTHON) --upgrade sw
 	@cd sw/lib && if [ ! -L current ]; then ln -s $(PYTHON) current; fi && cd -
 
 restart:
@@ -26,33 +30,54 @@ restart:
 
 clean: 	
 	@find . -name '*~' -print0 | xargs -0 rm -vf 
-	$(MAKE) --directory=scripts clean
-	$(MAKE) --directory=project clean
 
 mrproper: clean
 	@rm -rf sw pip-log.txt
-	$(MAKE) --directory=scripts mrproper 
-	$(MAKE) --directory=project mrproper 
-	@find . -name '*.pyc' -or -name '*.pyo' -print0 | xargs -0 rm -vf
+	$(MAKE) --directory=installer mrproper 
+	@find . -name '*.py?' -print0 | xargs -0 rm -vf
 
 pull:
 	@echo 'Pulling Git sources'
 	git pull
-	@echo 'Synchronize Django database'
-	$(RSYNC) $(RSYNC_MASTER)/db.sql3 ./
 	@echo 'Synchronize media directory'
 	$(RSYNC) $(RSYNC_MASTER)/media ./
 	@echo 'Re-compiling language files'
-	$(MAKE) --directory=project clean
+	$(MAKE) --directory=. compile
 	@echo 'Synchronization is done'
 
 push:
 	@echo 'Pushing Git sources into master repository'
 	git push
-	@echo 'Copying local database to master server'
-	$(RSYNC) ./db.sql3 $(RSYNC_MASTER)/
 	@echo 'Synchronizing local media with that of master server'
 	$(RSYNC) ./media/ $(RSYNC_MASTER)/media/
 
-test:
-	$(MAKE) --directory=project BASEDIR=$(shell pwd) test
+strings:
+	@for l in $(LANGUAGES); do \
+		[ ! -d portal/locale/$$l ] && mkdir -pv portal/locale/$$l; \
+		done;
+	$(call admin,makemessages --all --extension=html,py,txt);
+
+compile:
+	@for l in $(LANGUAGES); do \
+		[ ! -d portal/locale/$$l ] && mkdir -pv portal/locale/$$l; \
+		done;
+	$(call admin,compilemessages);
+
+validate:
+	$(call admin,validate)
+
+syncdb: validate
+	$(call admin,syncdb)
+
+shell:
+	$(call admin,shell)
+
+dbshell:
+	$(call admin,dbshell)
+
+test: compile validate syncdb
+	$(call admin,runserver 8080)
+
+smtp:
+	$(python) -m smtpd -n -c DebuggingServer localhost:1025
+

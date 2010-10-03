@@ -1,14 +1,14 @@
 # Django settings for my personal webpage
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 SEND_BROKEN_LINK_EMAILS = True
 import os
-from project.dbconfig import DATABASES
+from dbconfig import DATABASES
 
 # These locations are calculated based on the settings.py location
-BASEDIR = os.path.dirname(os.path.dirname(__file__))
-INSTALLDIR = os.path.join(BASEDIR, 'project') 
+INSTALLDIR = os.path.dirname(__file__)
+BASEDIR = os.path.dirname(os.path.dirname(INSTALLDIR))
 
 # mail settings for adminstration and management bussiness
 ADMINS = (
@@ -70,8 +70,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   'django.core.context_processors.media', #for MEDIA_URL
   'django.core.context_processors.i18n', #for LANGUAGES  
   'django.core.context_processors.request', #for request on every page
-  'project.context_processors.site', #for site
-  'project.context_processors.full_path', #for the full_path
+  'portal.context_processors.site', #for site
+  'portal.context_processors.full_path', #for the full_path
   'nav.context_processors.navigation', #for our menus
 )
 
@@ -92,7 +92,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-ROOT_URLCONF = 'project.urls'
+ROOT_URLCONF = 'portal.urls'
 
 TEMPLATE_DIRS = (
   # Put strings here, like "/home/html/django_templates".
@@ -109,7 +109,7 @@ INSTALLED_APPS = (
   'django.contrib.markup',
   # 'django.contrib.sitemaps',
 
-  # External projects reused
+  # External applications reused
   'djangoogle',
   'audit',
   'nav',
@@ -117,7 +117,7 @@ INSTALLED_APPS = (
   'flatties',
   'djit',
 
-  # Other projects
+  # Other applications
   'robots',
   'django_openid_auth',
 )

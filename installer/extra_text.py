@@ -9,25 +9,19 @@ to the virtualenv homepage for the explanation on those.
 
 import os, sys, subprocess
 
-SWURL = 'http://sw.andreanjos.org/git/simple/'
+# Where to find software
+SWURL = [
+    'http://sw.andreanjos.org/git/simple/',
+    'file://' + os.path.join(os.path.realpath(os.curdir), 'downloads'),
+    ]
+
 PACKAGES = [
-    'PIL', 
-    'djangoogle',
-    'nav', 
-    'audit', 
-    'uuid', 
-    'flup', 
-    'django-robots',
-    'python-openid',
-    'django-openid-auth',
-    'django-flatties',
-    'django-bitrepo',
-    'djpro',
-    'django-maintenancemode',
-    'mysql-python',
     ]
 SOURCES = [
     #('git+http://github.com/simonw/django-openid.git', 'django-openid'),
+    ]
+LOCALS = [
+    'portal',
     ]
 
 def after_install(options, home_dir):
@@ -43,14 +37,14 @@ def after_install(options, home_dir):
   subprocess.call(installer + ['pip'])
   
   installer = [os.path.join(home_dir, bin, 'pip'), 'install']
-  installer.append('--find-links=%s' % SWURL)
+  installer += ['--find-links=%s' % (k,) for k in SWURL]
   if options.upgrade: installer.append('--upgrade')
 
-  # a sequence of installs
-  subprocess.call(installer + PACKAGES)
+  installer += PACKAGES 
+  installer += ['--editable=%s#egg=%s' % (k,k) for k in SOURCES]
+  installer += ['--editable='+k for k in LOCALS]
 
-  # a few source packages
-  for k in SOURCES: subprocess.call(installer + ['--editable=%s#egg=%s' % k ])
+  subprocess.call(installer)
 
 def extend_parser(parser):
   """Adds an upgrade option."""
