@@ -5,19 +5,17 @@
 
 """Procedures to clean-up unused permissions and content types.
 """
-
-from project import settings
-from sys import argv
-
-from django.core.management import setup_environ
-setup_environ(settings)
+import os, sys
+activate = os.path.realpath(os.path.join(os.path.dirname(sys.argv[0]),
+  '..', 'sw', 'bin', 'activate_this.py'))
+execfile(activate, dict(__file__=activate))
 
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import Permission
 from django.db.models import get_model
 
 debug = True
-if len(argv) > 1: debug = False
+if len(sys.argv) > 1: debug = False
 
 print "\nDeleting obsolete django 'permissions'...\n"
 
@@ -37,4 +35,3 @@ for k in ContentType.objects.all():
     else: 
       print 'deleting: %s %s@%s (%s)' % (k.id, k.model, k.app_label, k.name)
       k.delete()
-
