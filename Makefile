@@ -11,7 +11,7 @@ admin=sw/bin/djm $(1)
 
 all: bootstrap 
 
-.PHONY: clean restart mrproper generate_bootstrap bootstrap upgrade strings compile shell dbshell syncdb 
+.PHONY: clean restart mrproper generate_bootstrap bootstrap upgrade strings compile shell dbshell syncdb run
 
 generate_bootstrap:
 	$(MAKE) --directory=installer generate
@@ -68,9 +68,11 @@ shell:
 dbshell:
 	$(call admin,dbshell)
 
-test: compile validate syncdb
+run:
+	$(call admin,runserver 8080)
+
+test: compile syncdb run
 	$(call admin,runserver 8080)
 
 smtp:
 	$(python) -m smtpd -n -c DebuggingServer localhost:1025
-
