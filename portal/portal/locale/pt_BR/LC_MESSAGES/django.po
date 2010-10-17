@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-17 10:45+0200\n"
+"POT-Creation-Date: 2010-10-17 10:53+0200\n"
 "PO-Revision-Date: 2007-08-19 21:37+0200\n"
 "Last-Translator: andre <(null)>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
@@ -20,59 +20,63 @@ msgstr ""
 
 #: settings.py:31
 msgid "English"
-msgstr ""
+msgstr "Inglês"
 
 #: settings.py:32
 msgid "Brazilian Portuguese"
-msgstr ""
+msgstr "Português do Brasil"
 
 #: settings.py:33
 msgid "French"
-msgstr ""
+msgstr "Francês"
 
 #: templates/404.html:4
 msgid "Page not found"
-msgstr ""
+msgstr "Página não encontrada"
 
 #: templates/404.html:5
 msgid "404 error - Page not found"
-msgstr ""
+msgstr "Erro 404 - Página não encontrada"
 
 #: templates/404.html:8
 msgid "The following requested page is not available:"
-msgstr ""
+msgstr "A página seguinte não está disponível:"
 
 #: templates/500.html:4
 msgid "Internal server error"
-msgstr ""
+msgstr "Erro interno do servidor"
 
 #: templates/500.html:5
 msgid "500 error - Internal server error"
-msgstr ""
+msgstr "Erro 500 - Erro interno do servidor"
 
 #: templates/500.html:8
 msgid ""
 "An internal server error has occurred. Reload to try again, or simply use "
 "your browser's back button."
 msgstr ""
+"Um erro interno do servidor acaba de acontecer. Recarrege para tentar "
+"novamente, ou simplesmente utilize o botão 'voltar atrás' de seu navigador."
 
 #: templates/503.html:4 templates/503.html.py:5
 msgid "We are currently under maintenance!"
-msgstr ""
+msgstr "Estamos temporariamente em manutenção!"
 
 #: templates/503.html:8
 msgid ""
 "I apologize, but I'm currently making modifications to this website. It "
 "should be back soon. Please try again later!"
 msgstr ""
+"Desculpas, mas estou atualmente fazendo modificações neste portal. Ele "
+"voltará ao ar brevemente. Por favor, tente mais tarde novamente!"
 
 #: templates/base.html:17 templates/simple.html:15
 msgid "Click here to get back to the start page"
-msgstr "Clique aqui para voltar para a página principal"
+msgstr "Clique aqui para voltar à página principal"
 
 #: templates/base.html:19
 msgid "hanging on the net..."
-msgstr ""
+msgstr "na rede..."
 
 #: templates/base.html:29
 msgid "logged in as"

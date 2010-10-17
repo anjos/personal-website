@@ -5,7 +5,6 @@
 RSYNC_MASTER='andreps@andreanjos.org:my.andreanjos.org'
 RSYNC=rsync --rsh=ssh --recursive --times --perms --owner --group --verbose --compress
 PYTHON=python2.6
-LANGUAGES=en pt_BR fr es
 
 # A few helpers -- don't modify!
 admin=sw/bin/djm $(1)
@@ -52,16 +51,10 @@ push:
 	$(RSYNC) ./media/ $(RSYNC_MASTER)/media/
 
 strings:
-	@for l in $(LANGUAGES); do \
-		[ ! -d portal/locale/$$l ] && mkdir -pv portal/locale/$$l; \
-		done;
-	$(call admin,makemessages --all --extension=html,py,txt);
+	@cd portal/portal; ../../$(call admin,makemessages --all --extension=html,py,txt);
 
-compile:
-	@for l in $(LANGUAGES); do \
-		[ ! -d portal/locale/$$l ] && mkdir -pv portal/locale/$$l; \
-		done;
-	$(call admin,compilemessages);
+compile: strings
+	@cd portal/portal; ../../$(call admin,compilemessages);
 
 validate:
 	$(call admin,validate)
