@@ -9,60 +9,113 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-09 16:06+0200\n"
+"POT-Creation-Date: 2010-10-17 10:45+0200\n"
 "PO-Revision-Date: 2007-08-19 21:37+0200\n"
 "Last-Translator: andre <(null)>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: base.html:15
+#: settings.py:31
+msgid "English"
+msgstr ""
+
+#: settings.py:32
+msgid "Brazilian Portuguese"
+msgstr ""
+
+#: settings.py:33
+msgid "French"
+msgstr ""
+
+#: templates/404.html:4
+msgid "Page not found"
+msgstr ""
+
+#: templates/404.html:5
+msgid "404 error - Page not found"
+msgstr ""
+
+#: templates/404.html:8
+msgid "The following requested page is not available:"
+msgstr ""
+
+#: templates/500.html:4
+msgid "Internal server error"
+msgstr ""
+
+#: templates/500.html:5
+msgid "500 error - Internal server error"
+msgstr ""
+
+#: templates/500.html:8
+msgid ""
+"An internal server error has occurred. Reload to try again, or simply use "
+"your browser's back button."
+msgstr ""
+
+#: templates/503.html:4 templates/503.html.py:5
+msgid "We are currently under maintenance!"
+msgstr ""
+
+#: templates/503.html:8
+msgid ""
+"I apologize, but I'm currently making modifications to this website. It "
+"should be back soon. Please try again later!"
+msgstr ""
+
+#: templates/base.html:17 templates/simple.html:15
 msgid "Click here to get back to the start page"
 msgstr "Clique aqui para voltar para a página principal"
 
-#: base.html:23
+#: templates/base.html:19
+msgid "hanging on the net..."
+msgstr ""
+
+#: templates/base.html:29
 msgid "logged in as"
 msgstr "conectado como"
 
-#: home.html:8
+#: templates/home.html:8
 msgid "Home Page"
 msgstr "Página Inicial"
 
-#: home.html:11
+#: templates/home.html:11
 msgid "No content available yet... Stay posted!"
 msgstr "Nenhum conteúdo disponível neste momento... Fique ligado!"
 
-#: admin/base_site.html:9
+#: templates/admin/base_site.html:11
 #, python-format
 msgid "%(domain)s"
 msgstr "%(domain)s"
 
-#: admin/base_site.html:12
+#: templates/admin/base_site.html:14
 msgid "click here to go back to the front page"
 msgstr "clique aqui para voltar para a página principal"
 
-#: admin/login.html:19
+#: templates/admin/login.html:19
 msgid "Username:"
 msgstr "Usuário:"
 
-#: admin/login.html:22
+#: templates/admin/login.html:22
 msgid "Password:"
 msgstr "Senha:"
 
-#: admin/login.html:26
+#: templates/admin/login.html:26
 msgid "Log in"
 msgstr "Conectar"
 
-#: admin/login.html:27
+#: templates/admin/login.html:27
 msgid "login using your Google account"
 msgstr "conectar usando sua conta Google"
 
-#: openid/failure.html:3 openid/failure.html.py:6
+#: templates/openid/failure.html:3 templates/openid/failure.html.py:6
 msgid "OpenID authentication failed"
 msgstr "Autenticação OpenID falhou"
 
-#: openid/failure.html:13
+#: templates/openid/failure.html:13
 msgid ""
 "If you believe this is an error, please ask the adminstrator to add it to "
 "the appropriate account."
