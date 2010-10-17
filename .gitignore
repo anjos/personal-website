@@ -2,7 +2,6 @@
 sw
 *.pyc
 *.pyo
-django.mo
 .*.swp
 installer/bootstrap.py
 installer/ez_setup.py
