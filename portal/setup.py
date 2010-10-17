@@ -32,6 +32,7 @@ setup(
     entry_points = {
       'console_scripts': [
         'djm = portal.scripts.manage:main',
+        'dispatch.fcgi = portal.scripts.dreamhost:fcgi',
         ],
       },
 

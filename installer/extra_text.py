@@ -11,7 +11,6 @@ import os, sys, subprocess
 
 # Where to find software
 SWURL = [
-    'file://' + os.path.join(os.path.realpath(os.curdir)),
     'file://' + os.path.join(os.path.realpath(os.curdir), 'downloads'),
     'http://sw.andreanjos.org/git/simple/',
     ]
@@ -22,6 +21,7 @@ SOURCES = [
     #('git+http://github.com/simonw/django-openid.git', 'django-openid'),
     ]
 LOCALS = [
+    'django-chords',
     'portal',
     ]
 
