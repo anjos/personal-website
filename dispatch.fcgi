@@ -1,1 +1,0 @@
-sw/bin/dispatch.fcgi
