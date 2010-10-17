@@ -52,6 +52,7 @@ setup(
       'django-bitrepo',
       'djpro',
       'django-maintenancemode',
+      'django-chords',
       ],
 
     # metadata for upload to PyPI

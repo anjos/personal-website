@@ -364,20 +364,6 @@ tr.odd, td.odd {
   border: none;
 }
 
-div.actions, div.actions a:link, div.actions a:visited {
-  margin-top: 2em;
-  font-size: 1em;
-  color: #000
-  text-decoration: none;
-  font-weight: bold;
-  text-align: right;
-}
-
-div.actions a:hover {
-  color: #333;
-  text-decoration: underline;
-}
-
 /** For our pictures and videos **/
 .djangoogle img.picasaweb-logo, .djangoogle img.youtube-logo {
   border: none;
@@ -453,4 +439,123 @@ table.highlighttable td.code .highlight pre {
   font-size: 130%;
   margin-left: auto;
   margin-right: auto;
+}
+
+
+/** For our chords module **/
+
+div.chords {
+  font-size: 1.3em;
+}
+
+div.chords .info-bar {
+  font-size: 1.2em;
+}
+
+/* Navigation style */
+.chords p.navigation {
+  text-align: center;
+  background-color: #fee;
+  border: #b00 solid 1px;
+  padding: 7px;
+}
+
+.chords p.navigation a {
+  background-color: #b00;
+  border-color: #b00;
+  color: white;
+  font-family: arial, helvetica, sans;
+  font-weight: bold;
+  border-style: outset;
+  border-width: 1px;
+  text-decoration: none;
+  padding: 2px;
+}
+
+.chords p.navigation a:hover  {
+  background-color: #d00;
+  border-color: #d00;
+  border-style: inset;
+}
+
+/* Paginator style */
+.chords .pagination {
+  font-family: arial, helvetica, sans;
+  font-weight: bold; 
+  color: #333;
+}
+
+.chords .pagination p {
+  /* order is top right bottom left */
+  text-align: center;
+}
+
+.chords .pagination .page {
+  background-color: #ccc;
+  border-color: #ccc;
+  border-style: outset;
+  border-width: 1px;
+  /* order is top right bottom left */
+  padding: 0.1em 0.4em 0.1em 0.4em;
+}
+
+.chords .pagination .page:hover {
+  background-color: #f88;
+  border-color: #f88;
+  border-style: inset;
+}
+
+.chords .pagination .current {
+  background-color: #bdf;
+  border-color: #bdf;
+}
+
+.chords .pagination a {
+  text-decoration: none;
+  color: #333;
+}
+
+.chords table.songs {
+  width: 100%;
+}
+
+.chords table.songs td {
+  color: #3c3230;
+  font-size: 0.9em;
+}
+
+.chords table.songs tr th {
+  background-color: #3c3230;
+  color: white;
+  font-weight: normal;
+  font-size: 0.9em;
+}
+
+.chords table.songs td.shortcuts {
+  width: 10%;
+  font-weight: bold;
+}
+
+.chords table.songs td.title {
+  width: 30%;
+  font-weight: bold;
+}
+
+.chords table.songs td.collections {
+  text-align: center;
+  width: 10%;
+}
+
+.chords table.songs td.composer, .chords table.songs td.performer {
+  width: 12%;
+}
+
+.chords table.songs td.tone {
+  font-weight: bold;
+  text-align: center;
+  width: 8%;
+}
+
+.chords table.songs td.year {
+  font-weight: bold;
 }

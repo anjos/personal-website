@@ -116,6 +116,7 @@ INSTALLED_APPS = (
   'bitrepo',
   'flatties',
   'djit',
+  'chords',
 
   # Other applications
   'robots',
