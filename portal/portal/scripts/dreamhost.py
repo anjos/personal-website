@@ -8,6 +8,7 @@
 
 def setup():
   """Generic setup for any possible installation of this software."""
+  import os
 
   # Sets up django w/o setting more environment variables
   from django.core.management import setup_environ
