@@ -6,6 +6,7 @@ import djangoogle.urls
 import bitrepo.urls
 import flatties.urls
 import djit.urls
+import chords.urls
 
 admin.autodiscover()
 

@@ -13,4 +13,6 @@ downloads/
 *.egg-info
 backup/
 favicon.*
-project/dbconfig.py
+django-*/
+portal/portal/dbconfig.py
+cron/backup.sh

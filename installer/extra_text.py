@@ -11,8 +11,9 @@ import os, sys, subprocess
 
 # Where to find software
 SWURL = [
-    'http://sw.andreanjos.org/git/simple/',
+    'file://' + os.path.join(os.path.realpath(os.curdir)),
     'file://' + os.path.join(os.path.realpath(os.curdir), 'downloads'),
+    'http://sw.andreanjos.org/git/simple/',
     ]
 
 PACKAGES = [
