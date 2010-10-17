@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-17 10:53+0200\n"
+"POT-Creation-Date: 2010-10-17 11:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,59 +19,63 @@ msgstr ""
 
 #: settings.py:31
 msgid "English"
-msgstr ""
+msgstr "Anglais"
 
 #: settings.py:32
 msgid "Brazilian Portuguese"
-msgstr ""
+msgstr "Portugais du Brésil"
 
 #: settings.py:33
 msgid "French"
-msgstr ""
+msgstr "Français"
 
 #: templates/404.html:4
 msgid "Page not found"
-msgstr ""
+msgstr "Page non trouvé"
 
 #: templates/404.html:5
 msgid "404 error - Page not found"
-msgstr ""
+msgstr "Erreur 404 - Page non trouvé"
 
 #: templates/404.html:8
 msgid "The following requested page is not available:"
-msgstr ""
+msgstr "La page suivante n'est pas disponible:"
 
 #: templates/500.html:4
 msgid "Internal server error"
-msgstr ""
+msgstr "Erreur interne du serveur"
 
 #: templates/500.html:5
 msgid "500 error - Internal server error"
-msgstr ""
+msgstr "Erreur 500 - Erreur interne du serveur"
 
 #: templates/500.html:8
 msgid ""
 "An internal server error has occurred. Reload to try again, or simply use "
 "your browser's back button."
 msgstr ""
+"Un erreur interne du serveur s'est passé. Rechargez pour essayer à nouveau, "
+"ou simplement utilizez la fonction 'revenir en arrière' de votre navigateur."
 
 #: templates/503.html:4 templates/503.html.py:5
 msgid "We are currently under maintenance!"
-msgstr ""
+msgstr "Nous sommes sur maintenance à présent!"
 
 #: templates/503.html:8
 msgid ""
 "I apologize, but I'm currently making modifications to this website. It "
 "should be back soon. Please try again later!"
 msgstr ""
+"Excusez-moi, mais je suis en train de faire de petits changementssur ce "
+"site. Il revindra en ligne prochainement. SVP, essayez a nouveau plus tard!"
 
 #: templates/base.html:17 templates/simple.html:15
 msgid "Click here to get back to the start page"
-msgstr "Clique ici pour revenir à là page d'accueil"
+msgstr "Cliquez ici pour revenir à là page d'accueil"
 
 #: templates/base.html:19
 msgid "hanging on the net..."
-msgstr ""
+msgstr "sur le réseau..."
 
 #: templates/base.html:29
 msgid "logged in as"
@@ -92,7 +96,7 @@ msgstr "%(domain)s"
 
 #: templates/admin/base_site.html:14
 msgid "click here to go back to the front page"
-msgstr "clique ici pour revenir à là page d'accueil"
+msgstr "cliquez ici pour revenir à là page d'accueil"
 
 #: templates/admin/login.html:19
 msgid "Username:"
