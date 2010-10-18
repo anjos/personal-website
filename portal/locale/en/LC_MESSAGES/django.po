@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-17 11:04+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2010-10-17 18:48+0200\n"
+"PO-Revision-Date: 2007-03-22 00:10+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,109 +19,144 @@ msgstr ""
 
 #: settings.py:31
 msgid "English"
-msgstr "Anglais"
+msgstr ""
 
 #: settings.py:32
 msgid "Brazilian Portuguese"
-msgstr "Portugais du Brésil"
+msgstr ""
 
 #: settings.py:33
 msgid "French"
-msgstr "Français"
+msgstr ""
 
 #: templates/404.html:4
 msgid "Page not found"
-msgstr "Page non trouvé"
+msgstr ""
 
 #: templates/404.html:5
 msgid "404 error - Page not found"
-msgstr "Erreur 404 - Page non trouvé"
+msgstr ""
 
 #: templates/404.html:8
 msgid "The following requested page is not available:"
-msgstr "La page suivante n'est pas disponible:"
+msgstr ""
 
 #: templates/500.html:4
 msgid "Internal server error"
-msgstr "Erreur interne du serveur"
+msgstr ""
 
 #: templates/500.html:5
 msgid "500 error - Internal server error"
-msgstr "Erreur 500 - Erreur interne du serveur"
+msgstr ""
 
 #: templates/500.html:8
 msgid ""
 "An internal server error has occurred. Reload to try again, or simply use "
 "your browser's back button."
 msgstr ""
-"Un erreur interne du serveur s'est passé. Rechargez pour essayer à nouveau, "
-"ou simplement utilizez la fonction 'revenir en arrière' de votre navigateur."
 
 #: templates/503.html:4 templates/503.html.py:5
 msgid "We are currently under maintenance!"
-msgstr "Nous sommes sur maintenance à présent!"
+msgstr ""
 
 #: templates/503.html:8
 msgid ""
 "I apologize, but I'm currently making modifications to this website. It "
 "should be back soon. Please try again later!"
 msgstr ""
-"Excusez-moi, mais je suis en train de faire de petits changementssur ce "
-"site. Il revindra en ligne prochainement. SVP, essayez a nouveau plus tard!"
 
 #: templates/base.html:17 templates/simple.html:15
 msgid "Click here to get back to the start page"
-msgstr "Cliquez ici pour revenir à là page d'accueil"
+msgstr ""
 
 #: templates/base.html:19
 msgid "hanging on the net..."
-msgstr "sur le réseau..."
+msgstr ""
 
 #: templates/base.html:29
 msgid "logged in as"
-msgstr "connecté comme"
+msgstr ""
 
 #: templates/home.html:8
 msgid "Home Page"
-msgstr "Page d'Accueil"
+msgstr "Home Page"
 
 #: templates/home.html:11
 msgid "No content available yet... Stay posted!"
-msgstr "Pas de contenu maintenant... Restez branché!"
+msgstr ""
 
 #: templates/admin/base_site.html:11
 #, python-format
 msgid "%(domain)s"
-msgstr "%(domain)s"
+msgstr ""
 
 #: templates/admin/base_site.html:14
 msgid "click here to go back to the front page"
-msgstr "cliquez ici pour revenir à là page d'accueil"
+msgstr ""
 
 #: templates/admin/login.html:19
 msgid "Username:"
-msgstr "Utilisateur:"
+msgstr ""
 
 #: templates/admin/login.html:22
 msgid "Password:"
-msgstr "Mot de passe:"
+msgstr ""
 
 #: templates/admin/login.html:26
 msgid "Log in"
-msgstr "Connecter"
+msgstr ""
 
 #: templates/admin/login.html:27
 msgid "login using your Google account"
-msgstr "connecter en utilisant votre idéntifiant Google"
+msgstr ""
 
 #: templates/openid/failure.html:3 templates/openid/failure.html.py:6
 msgid "OpenID authentication failed"
-msgstr "Autentication OpenID échoué"
+msgstr ""
 
 #: templates/openid/failure.html:13
 msgid ""
 "If you believe this is an error, please ask the adminstrator to add it to "
 "the appropriate account."
 msgstr ""
-"Si vous croyez que ceci est un erreur, contactez l'adminstrateur du site "
-"pour rajouter cet identité Google a votre compte."
+
+#, fuzzy
+#~ msgid "Latest publications"
+#~ msgstr "publications"
+
+#, fuzzy
+#~ msgid "Page"
+#~ msgstr "Home Page"
+
+#, fuzzy
+#~ msgid "Location"
+#~ msgstr "publications"
+
+#, fuzzy
+#~ msgid "Duration"
+#~ msgstr "publications"
+
+#~ msgid "Automatically generated at "
+#~ msgstr "Automatically generated at "
+
+#~ msgid "r&eacute;sum&eacute;"
+#~ msgstr "r&eacute;sum&eacute;"
+
+#~ msgid "photos"
+#~ msgstr "photos"
+
+#~ msgid "bookmarks"
+#~ msgstr "bookmarks"
+
+#, fuzzy
+#~ msgid "My latest bookmarks"
+#~ msgstr "bookmarks"
+
+#~ msgid "So..."
+#~ msgstr "So..."
+
+#~ msgid "repository"
+#~ msgstr "repository"
+
+#~ msgid "cavaquinho"
+#~ msgstr "cavaquinho"

@@ -30,6 +30,9 @@ setup(
       },
 
     entry_points = {
+      'distutil.commands': [
+        'install = portal.setuptools:extend_install',
+        ],
       'console_scripts': [
         'djm = portal.scripts.manage:main',
         'dispatch.fcgi = portal.scripts.dreamhost:fcgi',

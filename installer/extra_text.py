@@ -9,6 +9,12 @@ to the virtualenv homepage for the explanation on those.
 
 import os, sys, subprocess
 
+# Here we do some searches to see what we should enable/disable for local
+# development.
+def is_package(p): return os.path.exists(os.path.join(p, 'setup.py'))
+LOCALS = [k for k in os.listdir(os.curdir) if is_package(k)]
+LOCALS.append('.')
+
 # Where to find software
 SWURL = [
     'file://' + os.path.join(os.path.realpath(os.curdir), 'downloads'),
@@ -19,9 +25,6 @@ PACKAGES = [
     ]
 SOURCES = [
     #('git+http://github.com/simonw/django-openid.git', 'django-openid'),
-    ]
-LOCALS = [
-    'portal',
     ]
 
 def after_install(options, home_dir):

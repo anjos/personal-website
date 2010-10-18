@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: simple-theme 0.1\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-17 11:04+0200\n"
-"PO-Revision-Date: 2007-03-22 00:10+0100\n"
+"POT-Creation-Date: 2010-10-17 18:48+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -79,7 +79,7 @@ msgstr ""
 
 #: templates/home.html:8
 msgid "Home Page"
-msgstr "Home Page"
+msgstr ""
 
 #: templates/home.html:11
 msgid "No content available yet... Stay posted!"
@@ -119,44 +119,3 @@ msgid ""
 "If you believe this is an error, please ask the adminstrator to add it to "
 "the appropriate account."
 msgstr ""
-
-#, fuzzy
-#~ msgid "Latest publications"
-#~ msgstr "publications"
-
-#, fuzzy
-#~ msgid "Page"
-#~ msgstr "Home Page"
-
-#, fuzzy
-#~ msgid "Location"
-#~ msgstr "publications"
-
-#, fuzzy
-#~ msgid "Duration"
-#~ msgstr "publications"
-
-#~ msgid "Automatically generated at "
-#~ msgstr "Automatically generated at "
-
-#~ msgid "r&eacute;sum&eacute;"
-#~ msgstr "r&eacute;sum&eacute;"
-
-#~ msgid "photos"
-#~ msgstr "photos"
-
-#~ msgid "bookmarks"
-#~ msgstr "bookmarks"
-
-#, fuzzy
-#~ msgid "My latest bookmarks"
-#~ msgstr "bookmarks"
-
-#~ msgid "So..."
-#~ msgstr "So..."
-
-#~ msgid "repository"
-#~ msgstr "repository"
-
-#~ msgid "cavaquinho"
-#~ msgstr "cavaquinho"

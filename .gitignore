@@ -14,8 +14,8 @@ downloads/
 backup/
 favicon.*
 django-*/
-portal/portal/dbconfig.py
-cron/backup.sh
+dbconfig.py
+backup.sh
 media/chords/artists
 media/menus
 media/packages
