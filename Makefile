@@ -28,12 +28,13 @@ restart:
 	@skill -15 python
 
 clean: 	
-	@find . -name '*~' -print0 | xargs -0 rm -vf 
+	@find -L . -name '*~' -print0 | xargs -0 rm -vf 
 
 mrproper: clean
 	@rm -rf sw pip-log.txt
 	$(MAKE) --directory=installer mrproper 
-	@find . -name '*.py?' -print0 | xargs -0 rm -vf
+	@find -L . -name '*.py?' -print0 | xargs -0 rm -vf
+	@find -L . -name '*.egg-info' -print0 | xargs -0 rm -rvf
 
 pull:
 	@echo 'Pulling Git sources'

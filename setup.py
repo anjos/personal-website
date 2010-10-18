@@ -7,6 +7,7 @@
 """
 
 from setuptools import setup, find_packages
+from portal.setuptools import develop
 
 setup(
 
@@ -30,18 +31,23 @@ setup(
       },
 
     entry_points = {
-      'distutil.commands': [
-        'install = portal.setuptools:extend_install',
-        ],
       'console_scripts': [
         'djm = portal.scripts.manage:main',
+        ],
+      'portal.scripts': [
         'dispatch.fcgi = portal.scripts.dreamhost:fcgi',
         ],
+      },
+
+    # replaces the "develop" target with my own, that extends it.
+    cmdclass = {
+      'develop': develop,
       },
 
     zip_safe=False,
 
     install_requires = [
+      'setuptools',
       'mysql-python',
       'django>=1.2',
       'djangoogle',
@@ -57,6 +63,7 @@ setup(
       'djpro',
       'django-maintenancemode',
       'django-chords',
+      'django-rosetta',
       ],
 
     # metadata for upload to PyPI

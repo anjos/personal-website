@@ -10,13 +10,6 @@ def setup():
   """Generic setup for any possible installation of this software."""
   import os
 
-  # Sets up django w/o setting more environment variables
-  from django.core.management import setup_environ
-  from portal import settings
-  setup_environ(settings)
-
-  # Sets-up a few extras for the environment
-
   # Makes sure we have the latest git available on our private installation
   os.environ.setdefault('HOME', '/home/andreps')
   home_bin = os.path.join(os.environ['HOME'], 'sw', 'bin')
@@ -24,7 +17,6 @@ def setup():
 
   # Our time zone
   os.environ['TZ'] = 'Europe/Zurich'
-  
 
 def fcgi():
   """This will answer to the FCGI requests"""

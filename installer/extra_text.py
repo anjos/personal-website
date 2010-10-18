@@ -15,14 +15,9 @@ def is_package(p): return os.path.exists(os.path.join(p, 'setup.py'))
 LOCALS = [k for k in os.listdir(os.curdir) if is_package(k)]
 LOCALS.append('.')
 
-# Where to find software
-SWURL = [
-    'file://' + os.path.join(os.path.realpath(os.curdir), 'downloads'),
-    'http://sw.andreanjos.org/git/simple/',
-    ]
+# My index
+MY_INDEX = 'http://sw.andreanjos.org/git/simple/'
 
-PACKAGES = [
-    ]
 SOURCES = [
     #('git+http://github.com/simonw/django-openid.git', 'django-openid'),
     ]
@@ -36,18 +31,22 @@ def after_install(options, home_dir):
   else: bin = 'bin'
 
   # we first install pip, which is easier to use
-  installer = [os.path.join(home_dir, bin, 'easy_install'), '--quiet']
+  installer = [os.path.join(home_dir, bin, 'easy_install')] 
   subprocess.call(installer + ['pip'])
   
   installer = [os.path.join(home_dir, bin, 'pip'), 'install']
-  installer += ['--find-links=%s' % (k,) for k in SWURL]
+  #installer += ['--verbose', '--timeout=5']
+  installer += ['--use-mirrors', '--extra-index-url=%s' % MY_INDEX]
+  installer += ['--download-cache=downloads']
   if options.upgrade: installer.append('--upgrade')
 
-  installer += PACKAGES 
-  installer += ['--editable=%s#egg=%s' % (k,k) for k in SOURCES]
-  installer += ['--editable='+k for k in LOCALS]
+  if SOURCES:
+    sources = ['--editable=%s#egg=%s' % (k,k) for k in SOURCES]
+    subprocess.call(installer + sources)
 
-  subprocess.call(installer)
+  for k in LOCALS: 
+    #print 'Calling:', ' '.join(installer + ['--editable=%s' % k])
+    subprocess.call(installer + ['--editable=%s' % k])
 
 def extend_parser(parser):
   """Adds an upgrade option."""
