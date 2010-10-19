@@ -22,8 +22,8 @@ from pkg_resources import load_entry_point
 
 if __name__ == '__main__':
   from django.core.management import setup_environ
-  from portal import settings
-  setup_environ(settings)
+  import %(settings)s
+  setup_environ(%(settings)s)
   sys.exit(
       load_entry_point('%(spec)s', '%(group)s', '%(name)s')()
   )"""
@@ -35,27 +35,50 @@ class develop(_develop):
 
   def run(self, *args, **kwargs):
     _develop.run(self, *args, **kwargs)
-    self.install_django_scripts()
+    settings = self.discover_django_settings()
+    if settings: self.install_django_scripts(settings)
+    else: log.warn('Not installing django.scripts -- entry-point django.settings is undefined')
 
-  def install_django_scripts(self):
-    for args in self.create_django_scripts(): self.write_django_script(*args)
-
-  def create_django_scripts(self):
-    group = 'portal.scripts'
-    executable = sys_executable
+  def discover_django_settings(self):
+    possibilities = []
+    group = 'django.settings'
     dists, errors = \
         pkg_resources.working_set.find_plugins(pkg_resources.Environment())
-    for dist in dists:
-      spec = str(dist.as_requirement())
-      #print '##', spec
-      #to use this edit pip/__init__.py around line 224 and make it show stdout 
-      #import pdb; pdb.set_trace()
-      for name, ep in dist.get_entry_map(group).items():
-        yield(name, script_text % locals())
-
-    # also for myself!
-    spec = str(self.dist.as_requirement())
     for name, ep in self.dist.get_entry_map(group).items():
+      spec = str(ep.dist.as_requirement())
+      possibilities.append(ep)
+
+    if len(possibilities) == 0: return None
+    if len(possibilities) > 1:
+      log.warn('Found more than 1 "django.settings" entry-point in your installation')
+      for i, k in enumerate(possibilities):
+        log.warn('Entry %d: %s', i, k.name)
+      log.info('To avoid this warning, suppress the other entries in your project\'s setup')
+    log.info('Using django settings "%s"', possibilities[0].module_name)
+    return possibilities[0].module_name
+
+  def install_django_scripts(self, settings):
+    for args in self.create_django_scripts(settings): 
+      self.write_django_script(*args)
+
+  def create_django_scripts(self, settings):
+    group = 'django.scripts'
+    executable = sys_executable
+    
+    #all other packages
+    dists, errors = \
+        pkg_resources.working_set.find_plugins(pkg_resources.Environment())
+    entry_points = {} 
+    #print '## (django.scripts)', spec
+    #to use this edit pip/__init__.py around line 224 and make it show stdout 
+    #import pdb; pdb.set_trace()
+    for dist in dists: entry_points.update(dist.get_entry_map(group))
+
+    # myself
+    entry_points.update(self.dist.get_entry_map(group))
+
+    for name, ep in entry_points.iteritems(): 
+      spec = str(ep.dist.as_requirement())
       yield(name, script_text % locals())
 
   def write_django_script(self, script_name, contents):
