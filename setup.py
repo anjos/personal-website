@@ -34,7 +34,10 @@ setup(
       'console_scripts': [
         'djm = portal.scripts.manage:main',
         ],
-      'portal.scripts': [
+      'django.settings': [
+        'settings = portal.settings',
+        ],
+      'django.scripts': [
         'dispatch.fcgi = portal.scripts.dreamhost:fcgi',
         ],
       },
@@ -47,7 +50,6 @@ setup(
     zip_safe=False,
 
     install_requires = [
-      'setuptools',
       'mysql-python',
       'django>=1.2',
       'djangoogle',
