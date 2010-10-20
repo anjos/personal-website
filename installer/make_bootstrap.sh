@@ -15,11 +15,14 @@ export PATH=$1:${PATH}
 python_version=`python -c 'import sys;print "%d.%d" % sys.version_info[0:2]'`
 
 # We install/upgrade the setuptools
-echo "### Installing 'virtualenv'..."
-[ ! -d $1 ] && mkdir $1;
-[ -f ez_setup.py ] && rm -f ez_setup.py;
-wget --quiet http://peak.telecommunity.com/dist/ez_setup.py;
-python ez_setup.py --install-dir=$1 --quiet --upgrade virtualenv;
+venv=`which virtualenv`;
+if [ -z "${venv}" ]; then
+  echo "### 'virtualenv' not locally installed. Downloading and installing..."
+  [ ! -d $1 ] && mkdir $1;
+  [ -f ez_setup.py ] && rm -f ez_setup.py;
+  wget --quiet http://peak.telecommunity.com/dist/ez_setup.py;
+  python ez_setup.py --install-dir=$1 --quiet --upgrade virtualenv;
+fi
 
 # Now we generate the bootstrap script 
 echo "### Generating bootstrap..."
