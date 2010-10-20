@@ -8,7 +8,7 @@ from dbconfig import DATABASES
 
 # These locations are calculated based on the settings.py location
 INSTALLDIR = os.path.dirname(__file__)
-BASEDIR = os.path.dirname(os.path.dirname(INSTALLDIR))
+BASEDIR = os.path.dirname(INSTALLDIR)
 
 # mail settings for adminstration and management bussiness
 ADMINS = (
