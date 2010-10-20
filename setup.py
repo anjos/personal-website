@@ -12,7 +12,7 @@ from portal.setuptools import develop
 setup(
 
     name = "portal",
-    version = "0.5",
+    version = "0.5.1",
     packages = find_packages(),
 
     # we also need all translation files and templates
