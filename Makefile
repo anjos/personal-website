@@ -52,10 +52,10 @@ push:
 	$(RSYNC) ./media/ $(RSYNC_MASTER)/media/
 
 strings:
-	@cd portal/portal; ../../$(call admin,makemessages --all --extension=html,py,txt);
+	@cd portal; ../$(call admin,makemessages --all --extension=html,py,txt);
 
 compile: strings
-	@cd portal/portal; ../../$(call admin,compilemessages);
+	@cd portal; ../$(call admin,compilemessages);
 
 validate:
 	$(call admin,validate)
@@ -73,7 +73,6 @@ run:
 	$(call admin,runserver 8080)
 
 test: compile syncdb run
-	$(call admin,runserver 8080)
 
 smtp:
 	$(python) -m smtpd -n -c DebuggingServer localhost:1025
