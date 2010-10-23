@@ -448,8 +448,18 @@ div.chords {
   font-size: 1.3em;
 }
 
+div.chords p.song-performer {
+  font-family: times, serif;
+}
+
+div.chords p.title {
+  font-size: 2em;
+  font-family: times, serif;
+  text-align: left;
+}
+
 div.chords .info-bar {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 /* Navigation style */
