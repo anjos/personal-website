@@ -15,8 +15,15 @@
       <div id="header">
         <div id="logo">
           <a href="/" title="{% trans "Click here to get back to the start page" %}">
-            <h1>{{ site.name }}</h1>
-            <p>{% trans "hanging on the net..." %}
+            <img src="{% url media "portal/img/qrcode.png" %}" title="{% trans "This is the QR-code that will take you back to this website." %}"/>
+             <div class="text">
+               <font class="title">
+                 {{ site.name }}
+               </font><br/>
+               <font class="subtitle">
+                 {% trans "hanging on the net..." %}
+               </font>
+             </div>
           </a>
         </div><!-- ends logo -->
       </div><!-- ends header -->

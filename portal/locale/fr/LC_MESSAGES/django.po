@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-19 21:23+0200\n"
+"POT-Creation-Date: 2010-11-07 12:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,11 +73,15 @@ msgstr ""
 msgid "Click here to get back to the start page"
 msgstr "Cliquez ici pour revenir à là page d'accueil"
 
-#: templates/base.html:19
+#: templates/base.html:18
+msgid "This is the QR-code that will take you back to this website."
+msgstr ""
+
+#: templates/base.html:24
 msgid "hanging on the net..."
 msgstr "sur le réseau..."
 
-#: templates/base.html:29
+#: templates/base.html:36
 msgid "logged in as"
 msgstr "connecté comme"
 
