@@ -7,22 +7,15 @@ RSYNC=rsync --rsh=ssh --recursive --times --perms --owner --group --verbose --co
 PYTHON=python2.6
 
 # A few helpers -- don't modify!
-admin=sw/bin/djm $(1)
+admin=sw/bin/django $(1)
 
 all: bootstrap 
 
 .PHONY: clean restart mrproper generate_bootstrap bootstrap upgrade strings compile shell dbshell syncdb run
 
-generate_bootstrap:
-	$(MAKE) --directory=installer generate
-
 bootstrap: generate_bootstrap
-	@./installer/bootstrap.py --quiet --python=$(PYTHON) sw
-	@cd sw/lib && if [ ! -L current ]; then ln -s $(PYTHON) current; fi && cd -
-
-upgrade:
-	@./installer/bootstrap.py --quiet --python=$(PYTHON) --upgrade sw
-	@cd sw/lib && if [ ! -L current ]; then ln -s $(PYTHON) current; fi && cd -
+	@python bootstrap.py
+	@bin/buildout
 
 restart:
 	@skill -15 python
