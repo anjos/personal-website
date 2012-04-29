@@ -1,11 +1,9 @@
 from django.conf.urls.defaults import *
 from django.contrib import admin
 from django.conf import settings
-import audit.urls
 import djangoogle.urls
 import bitrepo.urls
 import flatties.urls
-import djit.urls
 import chords.urls
 
 admin.autodiscover()
@@ -13,9 +11,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', admin.site.urls),
     url(r'^google/', djangoogle.urls.namespaced),
-    url(r'^git/', djit.urls.namespaced),
     url(r'^music/', chords.urls.namespaced),
-    url(r'^audit/', audit.urls.namespaced),
     url(r'^openid/', include('django_openid_auth.urls')),
     url(r'^pages/', flatties.urls.namespaced),
     url(r'^bt/', bitrepo.urls.namespaced),
@@ -31,7 +27,7 @@ urlpatterns = patterns('',
     #   {'sitemaps': sitemaps}),
 
     # Media serving
-    url(r'^media/(?P<path>.*)$',
+    url(r'^static/(?P<path>.*)$',
      'django.views.static.serve',
      {'document_root': settings.MEDIA_ROOT,
      'show_indexes': True},

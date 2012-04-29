@@ -7,12 +7,11 @@
 """
 
 from setuptools import setup, find_packages
-from portal.setuptools import develop
 
 setup(
 
     name = "portal",
-    version = "0.5.2",
+    version = "0.6.0",
     packages = find_packages(),
 
     # we also need all translation files and templates
@@ -30,31 +29,13 @@ setup(
         ],
       },
 
-    entry_points = {
-      'console_scripts': [
-        'djm = portal.scripts.manage:main',
-        ],
-      'django.settings': [
-        'settings = portal.settings',
-        ],
-      'django.scripts': [
-        'dispatch.fcgi = portal.scripts.dreamhost:fcgi',
-        ],
-      },
-
-    # replaces the "develop" target with my own, that extends it.
-    cmdclass = {
-      'develop': develop,
-      },
-
     zip_safe=False,
 
     install_requires = [
       'mysql-python',
-      'django>=1.2',
+      'django>=1.4',
       'djangoogle',
       'nav', 
-      'audit', 
       'uuid', 
       'flup', 
       'django-robots',
@@ -62,7 +43,6 @@ setup(
       'django-openid-auth',
       'django-flatties',
       'django-bitrepo',
-      'djpro',
       'django-maintenancemode',
       'django-chords',
       'django-rosetta',
@@ -74,6 +54,6 @@ setup(
     description = "Provides a django project for my personal website",
     license = "PSF",
     keywords = "django website",
-    url = "http://sw.andreanjos.org/git/personal-website",
+    url = "https://github.com/anjos/personal-website",
 
 )

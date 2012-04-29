@@ -1,6 +1,6 @@
 # Django settings for my personal webpage
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 SEND_BROKEN_LINK_EMAILS = True
 import os
@@ -47,7 +47,8 @@ MEDIA_URL = '/media/'
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/django/'
+STATIC_URL = '/media/django/'
+STATIC_ROOT = os.path.realpath(os.path.join(BASEDIR, 'static'))
 
 # The default url for logging into the site
 LOGIN_URL = '/login/'
@@ -55,15 +56,9 @@ LOGIN_URL = '/login/'
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'wk&_+uqn)()=fz07y0qdl%@=m^gp^taf$&7ql&@-ffjk9aln_7'
 
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
-)
-
 # What we like to have in every page we render, as context
 TEMPLATE_CONTEXT_PROCESSORS = (
-  'django.core.context_processors.auth', #for users and permissions
+  'django.contrib.auth.context_processors.auth', #for users and permissions
   'django.core.context_processors.media', #for MEDIA_URL
   'django.core.context_processors.i18n', #for LANGUAGES  
   'django.core.context_processors.request', #for request on every page
@@ -79,7 +74,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
-    'audit.middleware.Activity',
     'django.middleware.cache.FetchFromCacheMiddleware',
     'maintenancemode.middleware.MaintenanceModeMiddleware',
 )
@@ -108,11 +102,9 @@ INSTALLED_APPS = (
 
   # External applications reused
   'djangoogle',
-  'audit',
   'nav',
   'bitrepo',
   'flatties',
-  'djit',
   'chords',
 
   # Other applications
@@ -127,8 +119,12 @@ DJANGOOGLE_ALBUMS_PER_PAGE = 8
 ROBOTS_USE_SITEMAP = False
 
 # Enables filesystem caching
-CACHE_DIR = os.path.join(BASEDIR, 'cache')
-CACHE_BACKEND = 'file://%s' % CACHE_DIR
+CACHES = {
+    'default': {
+      'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+      'LOCATION': os.path.join(BASEDIR, 'cache'),
+      },
+    }
 
 # Edit this if you want to cache the whole site and use the cache middleware
 CACHE_MIDDLEWARE_SECONDS = 600
@@ -146,3 +142,8 @@ OPENID_USE_AS_ADMIN_LOGIN = True
 
 # For the maintenance mode middleware
 #MAINTENANCE_MODE = True
+
+# For the translations
+LOCALE_PATHS = (
+    os.path.join(INSTALLDIR, 'locale'),
+    )
