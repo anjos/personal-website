@@ -1,6 +1,5 @@
 from django.conf.urls.defaults import *
 from django.contrib import admin
-from django.conf import settings
 import djangoogle.urls
 import bitrepo.urls
 import flatties.urls
@@ -25,13 +24,18 @@ urlpatterns = patterns('',
     url(r'^logout/$', 'portal.views.logout', name='logout'),
     # url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', 
     #   {'sitemaps': sitemaps}),
-
-    # Media serving
-    url(r'^static/(?P<path>.*)$',
-     'django.views.static.serve',
-     {'document_root': settings.MEDIA_ROOT,
-     'show_indexes': True},
-     name='media',
-     ), 
     )
 
+from django.conf import settings
+if settings.DEBUG:
+
+  # Media + Static serving
+  urlpatterns += (
+  
+      url(r'^media/(?P<path>.*)$', 'django.views.static.serve', 
+        {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}, 
+        name='media'), 
+
+      url('^static/(?P<path>.*)$', 'django.contrib.staticfiles.views.serve'),
+
+      )

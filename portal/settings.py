@@ -47,8 +47,9 @@ MEDIA_URL = '/media/'
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-STATIC_URL = '/media/django/'
-STATIC_ROOT = os.path.realpath(os.path.join(BASEDIR, 'static'))
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASEDIR, 'static')
+STATICFILES_DIRS = ( '%s/static' % INSTALLDIR, )
 
 # The default url for logging into the site
 LOGIN_URL = '/login/'
@@ -57,10 +58,13 @@ LOGIN_URL = '/login/'
 SECRET_KEY = 'wk&_+uqn)()=fz07y0qdl%@=m^gp^taf$&7ql&@-ffjk9aln_7'
 
 # What we like to have in every page we render, as context
-TEMPLATE_CONTEXT_PROCESSORS = (
+TEMPLATE_CONTEXT_PROCESSORS = ('django.core.context_processors.debug',) \
+    if DEBUG else ()
+TEMPLATE_CONTEXT_PROCESSORS += (
   'django.contrib.auth.context_processors.auth', #for users and permissions
-  'django.core.context_processors.media', #for MEDIA_URL
   'django.core.context_processors.i18n', #for LANGUAGES  
+  #'django.core.context_processors.media', #for MEDIA_URL
+  #'django.core.context_processors.static', #for STATIC_URL
   'django.core.context_processors.request', #for request on every page
   'portal.context_processors.site', #for site
   'portal.context_processors.full_path', #for the full_path
@@ -76,6 +80,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.doc.XViewMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
     'maintenancemode.middleware.MaintenanceModeMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -86,9 +91,8 @@ AUTHENTICATION_BACKENDS = (
 ROOT_URLCONF = 'portal.urls'
 
 TEMPLATE_DIRS = (
-  # Put strings here, like "/home/html/django_templates".
-  # Always use forward slashes, even on Windows.
   '%s/templates' % INSTALLDIR,
+  '%s/templates/portal' % INSTALLDIR,
 )
 
 INSTALLED_APPS = (
@@ -98,6 +102,7 @@ INSTALLED_APPS = (
   'django.contrib.sites',
   'django.contrib.admin',
   'django.contrib.markup',
+  'django.contrib.staticfiles',
   # 'django.contrib.sitemaps',
 
   # External applications reused
