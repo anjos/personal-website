@@ -7,9 +7,9 @@ RSYNC=rsync --rsh=ssh --recursive --times --perms --owner --group --verbose --co
 PYTHON=python2.6
 
 # A few helpers -- don't modify!
-admin=sw/bin/django $(1)
+admin=bin/django $(1)
 
-all: bootstrap 
+all: bootstrap
 
 .PHONY: clean restart mrproper generate_bootstrap bootstrap upgrade strings compile shell dbshell syncdb run
 
@@ -20,7 +20,7 @@ bootstrap: generate_bootstrap
 restart:
 	@skill -15 python
 
-clean: 	
+clean:
 	@find -L . -name '*~' -print0 | xargs -0 rm -vf 
 
 mrproper: clean

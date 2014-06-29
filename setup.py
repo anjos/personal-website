@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # vim: set fileencoding=utf-8 :
 # Andre Anjos <andre.anjos@idiap.ch>
-# Fri 01 Oct 2010 12:07:59 CEST 
+# Fri 01 Oct 2010 12:07:59 CEST
 
 """Project setup.
 """
@@ -35,9 +35,9 @@ setup(
       'mysql-python',
       'django>=1.4',
       'djangoogle',
-      'nav', 
-      'uuid', 
-      'flup', 
+      'django-nav',
+      'uuid',
+      'flup',
       'django-robots',
       'python-openid',
       'django-openid-auth',
