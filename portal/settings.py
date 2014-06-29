@@ -62,7 +62,7 @@ TEMPLATE_CONTEXT_PROCESSORS = ('django.core.context_processors.debug',) \
     if DEBUG else ()
 TEMPLATE_CONTEXT_PROCESSORS += (
   'django.contrib.auth.context_processors.auth', #for users and permissions
-  'django.core.context_processors.i18n', #for LANGUAGES  
+  'django.core.context_processors.i18n', #for LANGUAGES
   #'django.core.context_processors.media', #for MEDIA_URL
   #'django.core.context_processors.static', #for STATIC_URL
   'django.core.context_processors.request', #for request on every page
@@ -101,7 +101,6 @@ INSTALLED_APPS = (
   'django.contrib.sessions',
   'django.contrib.sites',
   'django.contrib.admin',
-  'django.contrib.markup',
   'django.contrib.staticfiles',
   # 'django.contrib.sitemaps',
 
@@ -118,7 +117,7 @@ INSTALLED_APPS = (
 )
 
 # Controls how many albums per page to see
-DJANGOOGLE_ALBUMS_PER_PAGE = 8 
+DJANGOOGLE_ALBUMS_PER_PAGE = 8
 
 # Disables the sitemap functionality for robots
 ROBOTS_USE_SITEMAP = False
