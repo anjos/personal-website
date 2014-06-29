@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simple-theme 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 12:39+0100\n"
+"POT-Creation-Date: 2014-06-02 19:33+0200\n"
 "PO-Revision-Date: 2007-03-22 00:10+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,66 +29,6 @@ msgstr ""
 msgid "French"
 msgstr ""
 
-#: templates/404.html:4
-msgid "Page not found"
-msgstr ""
-
-#: templates/404.html:5
-msgid "404 error - Page not found"
-msgstr ""
-
-#: templates/404.html:8
-msgid "The following requested page is not available:"
-msgstr ""
-
-#: templates/500.html:4
-msgid "Internal server error"
-msgstr ""
-
-#: templates/500.html:5
-msgid "500 error - Internal server error"
-msgstr ""
-
-#: templates/500.html:8
-msgid ""
-"An internal server error has occurred. Reload to try again, or simply use "
-"your browser's back button."
-msgstr ""
-
-#: templates/503.html:4 templates/503.html.py:5
-msgid "We are currently under maintenance!"
-msgstr ""
-
-#: templates/503.html:8
-msgid ""
-"I apologize, but I'm currently making modifications to this website. It "
-"should be back soon. Please try again later!"
-msgstr ""
-
-#: templates/base.html:17 templates/simple.html:15
-msgid "Click here to get back to the start page"
-msgstr ""
-
-#: templates/base.html:18
-msgid "This is the QR-code that will take you back to this website."
-msgstr ""
-
-#: templates/base.html:24
-msgid "hanging on the net..."
-msgstr ""
-
-#: templates/base.html:36
-msgid "logged in as"
-msgstr ""
-
-#: templates/home.html:8
-msgid "Home Page"
-msgstr "Home Page"
-
-#: templates/home.html:11
-msgid "No content available yet... Stay posted!"
-msgstr ""
-
 #: templates/admin/base_site.html:11
 #, python-format
 msgid "%(domain)s"
@@ -98,19 +38,29 @@ msgstr ""
 msgid "click here to go back to the front page"
 msgstr ""
 
-#: templates/admin/login.html:19
+#: templates/admin/login.html:18
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/admin/login.html:34
 msgid "Username:"
 msgstr ""
 
-#: templates/admin/login.html:22
+#: templates/admin/login.html:38
 msgid "Password:"
 msgstr ""
 
-#: templates/admin/login.html:26
+#: templates/admin/login.html:45
+msgid "Forgotten your password or username?"
+msgstr ""
+
+#: templates/admin/login.html:49
 msgid "Log in"
 msgstr ""
 
-#: templates/admin/login.html:27
+#: templates/admin/login.html:50
 msgid "login using your Google account"
 msgstr ""
 
@@ -122,6 +72,66 @@ msgstr ""
 msgid ""
 "If you believe this is an error, please ask the adminstrator to add it to "
 "the appropriate account."
+msgstr ""
+
+#: templates/portal/404.html:4
+msgid "Page not found"
+msgstr ""
+
+#: templates/portal/404.html:5
+msgid "404 error - Page not found"
+msgstr ""
+
+#: templates/portal/404.html:8
+msgid "The following requested page is not available:"
+msgstr ""
+
+#: templates/portal/500.html:4
+msgid "Internal server error"
+msgstr ""
+
+#: templates/portal/500.html:5
+msgid "500 error - Internal server error"
+msgstr ""
+
+#: templates/portal/500.html:8
+msgid ""
+"An internal server error has occurred. Reload to try again, or simply use "
+"your browser's back button."
+msgstr ""
+
+#: templates/portal/503.html:4 templates/portal/503.html.py:5
+msgid "We are currently under maintenance!"
+msgstr ""
+
+#: templates/portal/503.html:8
+msgid ""
+"I apologize, but I'm currently making modifications to this website. It "
+"should be back soon. Please try again later!"
+msgstr ""
+
+#: templates/portal/base.html:17 templates/portal/simple.html:16
+msgid "Click here to get back to the start page"
+msgstr ""
+
+#: templates/portal/base.html:18
+msgid "This is the QR-code that will take you back to this website."
+msgstr ""
+
+#: templates/portal/base.html:24
+msgid "hanging on the net..."
+msgstr ""
+
+#: templates/portal/base.html:36
+msgid "logged in as"
+msgstr ""
+
+#: templates/portal/home.html:8
+msgid "Home Page"
+msgstr "Home Page"
+
+#: templates/portal/home.html:11
+msgid "No content available yet... Stay posted!"
 msgstr ""
 
 #, fuzzy

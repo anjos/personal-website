@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-07 12:39+0100\n"
+"POT-Creation-Date: 2014-06-02 19:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,70 +29,6 @@ msgstr "Portugais du Brésil"
 msgid "French"
 msgstr "Français"
 
-#: templates/404.html:4
-msgid "Page not found"
-msgstr "Page non trouvé"
-
-#: templates/404.html:5
-msgid "404 error - Page not found"
-msgstr "Erreur 404 - Page non trouvé"
-
-#: templates/404.html:8
-msgid "The following requested page is not available:"
-msgstr "La page suivante n'est pas disponible:"
-
-#: templates/500.html:4
-msgid "Internal server error"
-msgstr "Erreur interne du serveur"
-
-#: templates/500.html:5
-msgid "500 error - Internal server error"
-msgstr "Erreur 500 - Erreur interne du serveur"
-
-#: templates/500.html:8
-msgid ""
-"An internal server error has occurred. Reload to try again, or simply use "
-"your browser's back button."
-msgstr ""
-"Un erreur interne du serveur s'est passé. Rechargez pour essayer à nouveau, "
-"ou simplement utilizez la fonction 'revenir en arrière' de votre navigateur."
-
-#: templates/503.html:4 templates/503.html.py:5
-msgid "We are currently under maintenance!"
-msgstr "Nous sommes sur maintenance à présent!"
-
-#: templates/503.html:8
-msgid ""
-"I apologize, but I'm currently making modifications to this website. It "
-"should be back soon. Please try again later!"
-msgstr ""
-"Excusez-moi, mais je suis en train de faire de petits changementssur ce "
-"site. Il revindra en ligne prochainement. SVP, essayez a nouveau plus tard!"
-
-#: templates/base.html:17 templates/simple.html:15
-msgid "Click here to get back to the start page"
-msgstr "Cliquez ici pour revenir à là page d'accueil"
-
-#: templates/base.html:18
-msgid "This is the QR-code that will take you back to this website."
-msgstr ""
-
-#: templates/base.html:24
-msgid "hanging on the net..."
-msgstr "sur le réseau..."
-
-#: templates/base.html:36
-msgid "logged in as"
-msgstr "connecté comme"
-
-#: templates/home.html:8
-msgid "Home Page"
-msgstr "Page d'Accueil"
-
-#: templates/home.html:11
-msgid "No content available yet... Stay posted!"
-msgstr "Pas de contenu maintenant... Restez branché!"
-
 #: templates/admin/base_site.html:11
 #, python-format
 msgid "%(domain)s"
@@ -102,19 +38,29 @@ msgstr "%(domain)s"
 msgid "click here to go back to the front page"
 msgstr "cliquez ici pour revenir à là page d'accueil"
 
-#: templates/admin/login.html:19
+#: templates/admin/login.html:18
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/admin/login.html:34
 msgid "Username:"
 msgstr "Utilisateur:"
 
-#: templates/admin/login.html:22
+#: templates/admin/login.html:38
 msgid "Password:"
 msgstr "Mot de passe:"
 
-#: templates/admin/login.html:26
+#: templates/admin/login.html:45
+msgid "Forgotten your password or username?"
+msgstr ""
+
+#: templates/admin/login.html:49
 msgid "Log in"
 msgstr "Connecter"
 
-#: templates/admin/login.html:27
+#: templates/admin/login.html:50
 msgid "login using your Google account"
 msgstr "connecter en utilisant votre idéntifiant Google"
 
@@ -129,3 +75,67 @@ msgid ""
 msgstr ""
 "Si vous croyez que ceci est un erreur, contactez l'adminstrateur du site "
 "pour rajouter cet identité Google a votre compte."
+
+#: templates/portal/404.html:4
+msgid "Page not found"
+msgstr "Page non trouvé"
+
+#: templates/portal/404.html:5
+msgid "404 error - Page not found"
+msgstr "Erreur 404 - Page non trouvé"
+
+#: templates/portal/404.html:8
+msgid "The following requested page is not available:"
+msgstr "La page suivante n'est pas disponible:"
+
+#: templates/portal/500.html:4
+msgid "Internal server error"
+msgstr "Erreur interne du serveur"
+
+#: templates/portal/500.html:5
+msgid "500 error - Internal server error"
+msgstr "Erreur 500 - Erreur interne du serveur"
+
+#: templates/portal/500.html:8
+msgid ""
+"An internal server error has occurred. Reload to try again, or simply use "
+"your browser's back button."
+msgstr ""
+"Un erreur interne du serveur s'est passé. Rechargez pour essayer à nouveau, "
+"ou simplement utilizez la fonction 'revenir en arrière' de votre navigateur."
+
+#: templates/portal/503.html:4 templates/portal/503.html.py:5
+msgid "We are currently under maintenance!"
+msgstr "Nous sommes sur maintenance à présent!"
+
+#: templates/portal/503.html:8
+msgid ""
+"I apologize, but I'm currently making modifications to this website. It "
+"should be back soon. Please try again later!"
+msgstr ""
+"Excusez-moi, mais je suis en train de faire de petits changementssur ce "
+"site. Il revindra en ligne prochainement. SVP, essayez a nouveau plus tard!"
+
+#: templates/portal/base.html:17 templates/portal/simple.html:16
+msgid "Click here to get back to the start page"
+msgstr "Cliquez ici pour revenir à là page d'accueil"
+
+#: templates/portal/base.html:18
+msgid "This is the QR-code that will take you back to this website."
+msgstr ""
+
+#: templates/portal/base.html:24
+msgid "hanging on the net..."
+msgstr "sur le réseau..."
+
+#: templates/portal/base.html:36
+msgid "logged in as"
+msgstr "connecté comme"
+
+#: templates/portal/home.html:8
+msgid "Home Page"
+msgstr "Page d'Accueil"
+
+#: templates/portal/home.html:11
+msgid "No content available yet... Stay posted!"
+msgstr "Pas de contenu maintenant... Restez branché!"
