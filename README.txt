@@ -5,5 +5,5 @@ Setup::
 
   $ python bootstrap
   $ ./bin/buildout
-  $ scp andreps@my.andreanjos.org:my.andreanjos.org/portal/dbconfig.py .
+  $ scp andreanjos@my.andreanjos.org:my.andreanjos.org/portal/dbconfig.py .
   $ ./helpers/copy.local.sh

@@ -6,11 +6,11 @@
 # for testing purposes.
 echo "Removing old copy..."
 [ -r portal/local.sql3 ] && rm -f portal/local.sql3;
-echo "Creating local database..." 
-./bin/django syncdb --database=local --noinput
+echo "Creating local database..."
+./bin/django syncdb --noinput --database=local
 echo "Resetting some apps..."
-./bin/django sqlflush --database=local --noinput
-./bin/django reset --database=local --noinput auth contenttypes sites
+./bin/django sqlflush --database=local
+./bin/django reset --noinput --database=local auth contenttypes sites
 echo "Copying all contents from remote server..."
 ./bin/django dumpdata --database=server --indent=2 > tmp.json
 ./bin/django loaddata --database=local tmp.json
