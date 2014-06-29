@@ -1,7 +1,7 @@
 # Django settings for my personal webpage
 
 DEBUG = True
-DREAMHOST = False
+DREAMHOST = True
 TEMPLATE_DEBUG = DEBUG
 SEND_BROKEN_LINK_EMAILS = True
 import os
