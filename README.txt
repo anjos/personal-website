@@ -7,5 +7,7 @@ Setup::
   $ ./bin/buildout
   $ scp andreanjos@my.andreanjos.org:my.andreanjos.org/portal/dbconfig.py portal/
   $ ./helpers/copy.local.sh
-  $ vim dbconfig.py # change db from server -> local
   $ scp -rC andreanjos@my.andreanjos.org:my.andreanjos.org/public static
+  $ vim portal/dbconfig.py # change db from server -> local
+  $ vim portal/settings.py # change DREAMHOST -> False
+
