@@ -1,8 +1,7 @@
 {% extends "base.html" %}
-{% load staticfiles i18n djangoogle_tags %}
+{% load staticfiles i18n %}
 {% block media %}
   {{ block.super }}
-  {% djangoogle_last_media %}
   <!--<link href="{% static "css/home.css" %}" rel="stylesheet" type="text/css" media="screen" />-->
 {% endblock %}
 {% block title %}{% trans "Home Page" %}{% endblock %}

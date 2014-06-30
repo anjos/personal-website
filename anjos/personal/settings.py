@@ -83,8 +83,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   'django.core.context_processors.static', #for STATIC_URL
   'django.core.context_processors.i18n', #for LANGUAGES
   'django.core.context_processors.request', #for the request on all pages
-  'portal.context_processors.site', #for site
-  'portal.context_processors.full_path', #for the full_path
+  'anjos.personal.context_processors.site', #for site
+  'anjos.personal.context_processors.full_path', #for the full_path
   'nav.context_processors.navigation', #for our menus
 )
 
@@ -105,13 +105,13 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-ROOT_URLCONF = 'portal.urls'
+ROOT_URLCONF = 'anjos.personal.urls'
 
 TEMPLATE_DIRS = (
   # Put strings here, like "/home/html/django_templates".
   # Always use forward slashes, even on Windows.
   '%s/templates' % BASEDIR,
-  '%s/templates/portal' % BASEDIR,
+  '%s/templates/personal' % BASEDIR,
 )
 
 INSTALLED_APPS = (

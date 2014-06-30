@@ -65,9 +65,12 @@ Here are some common tips for maintenance.
 Running a Test Server
 =====================
 
-To start a test server::
+You can run a test server locally, either using the remote (Dreamhost) default
+MySQL database or a local version. To start a test server::
 
   $ ./bin/dj runserver
+
+To setup a local copy of the MySQL database, look below.
 
 Removing Obsolete ContentTypes
 ===============================
@@ -88,7 +91,7 @@ To work locally, using an SQLite database for development, you can dump the
 current data on your server and load it again on a local sqlite3 database::
 
   $ ./bin/dj dumpdata > data.json
-  $ vim anjos/website/settings.py # change to the local database configuration
+  $ vim anjos/personal/settings.py # change to the local database configuration
   $ ./bin/dj syncdb --noinput
   $ ./bin/dj reset auth --noinput
   $ ./bin/dj reset contenttypes --noinput
