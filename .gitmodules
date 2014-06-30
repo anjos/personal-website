@@ -1,6 +1,3 @@
-[submodule "src/djangoogle"]
-	path = src/djangoogle
-	url = git@github.com:anjos/djangoogle
 [submodule "src/django-nav"]
 	path = src/django-nav
 	url = git@github.com:anjos/django-nav
