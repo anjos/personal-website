@@ -1,15 +1,15 @@
 [submodule "src/djangoogle"]
 	path = src/djangoogle
-	url = https://github.com/anjos/djangoogle
+	url = git@github.com:anjos/djangoogle
 [submodule "src/django-nav"]
 	path = src/django-nav
-	url = https://github.com/anjos/django-nav
+	url = git@github.com:anjos/django-nav
 [submodule "src/django-flatties"]
 	path = src/django-flatties
-	url = https://github.com/anjos/django-flatties
+	url = git@github.com:anjos/django-flatties
 [submodule "src/django-order"]
 	path = src/django-order
-	url = https://github.com/anjos/django-order
+	url = git@github.com:anjos/django-order
 [submodule "src/django-chords"]
 	path = src/django-chords
-	url = https://github.com/anjos/django-chords
+	url = git@github.com:anjos/django-chords
