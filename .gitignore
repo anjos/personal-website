@@ -3,8 +3,8 @@
 *.pyo
 .*.swp
 static/
-portal/dbconfig.py
-portal/local.sql3
+anjos/personal/dbconfig.py
+anjos/personal/local.sql3
 bin/
 cache/
 develop-eggs/

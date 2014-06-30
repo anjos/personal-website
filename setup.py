@@ -11,48 +11,59 @@ from setuptools import setup, find_packages
 setup(
 
     name = "anjos.personal",
-    version = "0.6.0",
-    packages = find_packages(),
+    version = "0.7.0",
+    description="My personal website",
+    license="FreeBSD",
+    author='Andre Anjos',
+    author_email='andre.dos.anjos@gmail.com',
+    long_description=open('README.rst').read(),
+    url='https://github.com/anjos/personal-website',
 
-    # we also need all translation files and templates
-    package_data = {
-      'anjos/personal': [
-        'templates/*.html',
-        'templates/openid/*.html',
-        'templates/admin/*.html',
-        'templates/locale/*/LC_MESSAGES/django.po',
-        'templates/locale/*/LC_MESSAGES/django.mo',
-        'media/css/*.css',
-        'media/img/*.png',
-        'media/img/admin/*.jpg',
-        'media/img/admin/*.gif',
+    packages=find_packages(),
+    include_package_data=True,
+    zip_safe=False,
+
+    namespace_packages=[
+      "anjos",
+      ],
+
+    install_requires = [
+
+      # pretty generic
+      'setuptools',
+      'pillow',
+      'flup',
+      'uuid',
+      'mysql-python',
+      'python-openid',
+
+      # others
+      'django-robots',
+      'django-openid-auth',
+      'django-maintenancemode',
+      'django-rosetta',
+
+      # mine
+      'djangoogle',
+      'django-flatties',
+      'django-nav',
+      'django-chords',
+
+      ],
+
+    entry_points = {
+      'console_scripts': [
         ],
       },
 
-    zip_safe=False,
-
-    install_requires = [
-      'mysql-python',
-      'django>=1.4',
-      'djangoogle',
-      'django-nav',
-      'uuid',
-      'flup',
-      'django-robots',
-      'python-openid',
-      'django-openid-auth',
-      'django-flatties',
-      'django-maintenancemode',
-      'django-chords',
-      'django-rosetta',
+    classifiers = [
+      'Development Status :: 5 - Production/Stable',
+      'Environment :: Web Environment',
+      'Framework :: Django',
+      'Intended Audience :: Developers',
+      'License :: OSI Approved :: BSD License',
+      'Natural Language :: English',
+      'Programming Language :: Python',
       ],
-
-    # metadata for upload to PyPI
-    author = "Andre Anjos",
-    author_email = "andre.dos.anjos@gmail.com",
-    description = "Provides a django project for my personal website",
-    license = "PSF",
-    keywords = "django website",
-    url = "https://github.com/anjos/personal-website",
 
 )

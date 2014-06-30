@@ -22,18 +22,13 @@ After that, bootstrap the environment::
   $ ./bin/buildout
   ...
 
-Create the PDF for your CV::
-
-  $ cd anjos/website/static/cv
-  $ make
-
 By default, the settings on the project are setup to work with a local
 ``db.sql3`` that should be placed at the root of the package. You can also work
 against a MySQL server. In such a case, you will need to get hold of the MySQL
 connection string. You can copy the one on your private server, if you have the
 right to do so::
 
-  $ scp andreanjos@andreanjos.org:andreanjos.org/anjos/website/dbconfig.py anjos/website
+  $ scp andreanjos@my.andreanjos.org:my.andreanjos.org/anjos/personal/dbconfig.py anjos/personal
 Otherwise, here is a template (it should be placed on the same directory as
 ``settings.py`` is)::
 
@@ -59,7 +54,7 @@ working directory and collect all apps static files::
 
   $ ./bin/dj collectstatic --noinput
   ...
-  $ rsync -avz andreps@andreanjos.org:andreanjos.org/static/ static/
+  $ rsync -avz andreanjos@my.andreanjos.org:my.andreanjos.org/public/ static/
   ...
 
 Maintenance
@@ -79,7 +74,7 @@ Removing Obsolete ContentTypes
 
 This happens when you remove applications from your website::
 
-  $ ./manage.py shell
+  $ ./bin/dj shell
   >>> from django.contrib.contenttypes.models import ContentType
   >>> for ct in ContentType.objects.filter(app_label='audit'):
   ...     ct.delete()
