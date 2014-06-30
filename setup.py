@@ -10,13 +10,13 @@ from setuptools import setup, find_packages
 
 setup(
 
-    name = "portal",
+    name = "anjos.personal",
     version = "0.6.0",
     packages = find_packages(),
 
     # we also need all translation files and templates
     package_data = {
-      'portal': [
+      'anjos/personal': [
         'templates/*.html',
         'templates/openid/*.html',
         'templates/admin/*.html',
@@ -42,7 +42,6 @@ setup(
       'python-openid',
       'django-openid-auth',
       'django-flatties',
-      'django-bitrepo',
       'django-maintenancemode',
       'django-chords',
       'django-rosetta',
