@@ -60,7 +60,7 @@ Next, you will need to copy media only available remotely, to the current
 working directory and collect all apps static files::
 
   $ ./bin/dj collectstatic --noinput
-  $ rsync -avz andreanjos@my.andreanjos.org:my.andreanjos.org/public/media media/
+  $ rsync -avz andreanjos@my.andreanjos.org:my.andreanjos.org/public/media/ media/
 
 Maintenance
 -----------
