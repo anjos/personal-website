@@ -18,9 +18,7 @@ Clone this package using the following command::
 After that, bootstrap the environment::
 
   $ python bootstrap.py
-  ...
   $ ./bin/buildout
-  ...
 
 By default, the settings on the project are setup to work with a local
 ``db.sql3`` that should be placed at the root of the package. You can also work
@@ -28,20 +26,29 @@ against a MySQL server. In such a case, you will need to get hold of the MySQL
 connection string. You can copy the one on your private server, if you have the
 right to do so::
 
-  $ scp andreanjos@my.andreanjos.org:my.andreanjos.org/anjos.personal/anjos/personal/dbconfig.py anjos/personal
+  $ scp andreanjos@andreanjos.org:my.andreanjos.org/anjos.personal/anjos/personal/dbconfig.py anjos/personal
+
 Otherwise, here is a template (it should be placed on the same directory as
 ``settings.py`` is)::
 
+  import os
+
   DATABASES = {
-    'default': {
-      'ENGINE': 'django.db.backends.mysql',
-      'NAME': 'db_name',
-      'USER': '******',
-      'PASSWORD': '******',
-      'HOST': 'mysql.dbhost.com',
-      'PORT': '3306',
-    },
-  }
+      'local': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(os.path.dirname(__file__), 'local.sql3')
+        },
+      'server': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '<database-name>',
+        'USER': '<database-user>',
+        'PASSWORD': '*********',
+        'HOST': 'mysql.andreanjos.org',
+        'PORT': '3306',
+        },
+      }
+
+  DATABASES['default'] = DATABASES['server']
 
 .. warning::
 
@@ -53,9 +60,7 @@ Next, you will need to copy media only available remotely, to the current
 working directory and collect all apps static files::
 
   $ ./bin/dj collectstatic --noinput
-  ...
-  $ rsync -avz andreanjos@my.andreanjos.org:my.andreanjos.org/public/ static/
-  ...
+  $ rsync -avz andreanjos@my.andreanjos.org:my.andreanjos.org/public/media media/
 
 Maintenance
 -----------
@@ -99,12 +104,15 @@ Installing on Dreamhost
 Follow these steps:
 
 1. Make sure that the database configuration is set right;
+
 2. Make sure that the variable ``DREAMHOST`` is set to ``True`` at the top of
    the ``settings.py`` file. Do the same for ``DEBUG`` (setting it to
    ``False``);
+
 3. Link ``passenger_wsgi.py``::
    $ cd <website-directory>
    $ ln -s anjos.website/bin/dj.wsgi passenger_wsgi.py
+
 4. Set up the backup cronjob to execute daily (e.g.: ``backup/do_it.sh``). Here
    is an example::
 
@@ -112,3 +120,6 @@ Follow these steps:
      cd `dirname $0`
      mysqldump -h mysql.andreanjos.org -u aadjadmin -p******* --opt aa_professional_website > db.sql
      /usr/sbin/logrotate --state=logrotate.state logrotate.conf
+
+5. If you cleaned-up the previous installation, run ``dj collectstatic
+   --noinput`` to re-issue the static files on the adequate location.
