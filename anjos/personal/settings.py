@@ -125,9 +125,7 @@ INSTALLED_APPS = (
   # 'django.contrib.sitemaps',
 
   # External projects reused
-  'djangoogle',
   'nav',
-  'bitrepo',
   'flatties',
   'chords',
 
@@ -135,9 +133,6 @@ INSTALLED_APPS = (
   'robots',
   'django_openid_auth',
 )
-
-# Controls how many albums per page to see
-DJANGOOGLE_ALBUMS_PER_PAGE = 8
 
 # Disables the sitemap functionality for robots
 ROBOTS_USE_SITEMAP = False

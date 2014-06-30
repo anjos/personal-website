@@ -1,7 +1,5 @@
 from django.conf.urls import patterns, url, include
 from django.contrib import admin
-import djangoogle.urls
-import bitrepo.urls
 import flatties.urls
 import chords.urls
 
@@ -9,11 +7,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', admin.site.urls),
-    url(r'^google/', djangoogle.urls.namespaced),
     url(r'^music/', chords.urls.namespaced),
     url(r'^openid/', include('django_openid_auth.urls')),
     url(r'^pages/', flatties.urls.namespaced),
-    url(r'^bt/', bitrepo.urls.namespaced),
     url(r'^robots.txt$', include('robots.urls')),
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^jsi18n/(?P<packages>\S+?)/$',

@@ -44,7 +44,6 @@ setup(
       'django-rosetta',
 
       # mine
-      'djangoogle',
       'django-flatties',
       'django-nav',
       'django-chords',
