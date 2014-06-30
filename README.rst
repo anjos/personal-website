@@ -84,6 +84,29 @@ This happens when you remove applications from your website::
 
   $ ./bin/remove_app.py <appname>
 
+Debugging 500 Errors
+====================
+
+To debug 500 errors, add the egg ``paste`` to your buildout, then edit,
+manually, the file ``./bin/dj.wsgi`` to add the following two lines, by the
+end::
+
+  import djangorecipe.wsgi
+  from paste.exceptions.errormiddleware import ErrorMiddleware #<< add this
+  application = djangorecipe.wsgi.main('anjos.personal.settings', logfile='')
+  application = ErrorMiddleware(application, debug=True) #<< add this
+
+Make sure to kill the current webserver process being run::
+
+  $ pkill python
+
+And to touch ``<webserver-folder>/tmp/restart.txt``::
+
+  $ touch tmp/restart.txt
+
+Now try to reload the page you had problems with and observe the logs being
+displayed on the web browser screen.
+
 Moving a MySQL database to SQLite3
 ==================================
 
