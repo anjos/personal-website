@@ -72,17 +72,12 @@ MySQL database or a local version. To start a test server::
 
 To setup a local copy of the MySQL database, look below.
 
-Removing Obsolete ContentTypes
-===============================
+Removing Obsolete Apps
+======================
 
 This happens when you remove applications from your website::
 
-  $ ./bin/dj shell
-  >>> from django.contrib.contenttypes.models import ContentType
-  >>> for ct in ContentType.objects.filter(app_label='audit'):
-  ...     ct.delete()
-  ...
-  >>>
+  $ ./bin/remove_app.py <appname>
 
 Moving a MySQL database to SQLite3
 ==================================
@@ -91,7 +86,7 @@ To work locally, using an SQLite database for development, you can dump the
 current data on your server and load it again on a local sqlite3 database::
 
   $ ./bin/dj dumpdata > data.json
-  $ vim anjos/personal/settings.py # change to the local database configuration
+  $ vim anjos/personal/dbconfig.py # change to the local database configuration
   $ ./bin/dj syncdb --noinput
   $ ./bin/dj reset auth --noinput
   $ ./bin/dj reset contenttypes --noinput
@@ -104,23 +99,16 @@ Installing on Dreamhost
 Follow these steps:
 
 1. Make sure that the database configuration is set right;
-2. Make sure that the variable ``DREAMHOST`` is set to ``True`` at the top of the
-   ``settings.py`` file. Do the same for ``DEBUG`` (setting it to ``False``);
+2. Make sure that the variable ``DREAMHOST`` is set to ``True`` at the top of
+   the ``settings.py`` file. Do the same for ``DEBUG`` (setting it to
+   ``False``);
 3. Link ``passenger_wsgi.py``::
-
    $ cd <website-directory>
    $ ln -s anjos.website/bin/dj.wsgi passenger_wsgi.py
-4. Set up the backup cronjob to execute daily (``backup/do_it.sh``)
-Personal Website
-================
+4. Set up the backup cronjob to execute daily (e.g.: ``backup/do_it.sh``). Here
+   is an example::
 
-Setup::
-
-  $ python bootstrap
-  $ ./bin/buildout
-  $ scp andreanjos@my.andreanjos.org:my.andreanjos.org/portal/dbconfig.py portal/
-  $ ./helpers/copy.local.sh
-  $ scp -rC andreanjos@my.andreanjos.org:my.andreanjos.org/public static
-  $ vim portal/dbconfig.py # change db from server -> local
-  $ vim portal/settings.py # change DREAMHOST -> False
-
+     #!/bin/sh
+     cd `dirname $0`
+     mysqldump -h mysql.andreanjos.org -u aadjadmin -p******* --opt aa_professional_website > db.sql
+     /usr/sbin/logrotate --state=logrotate.state logrotate.conf
