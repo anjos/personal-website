@@ -4,6 +4,7 @@
 .*.swp
 static/
 media/
+backup/
 anjos/personal/dbconfig.py
 anjos/personal/local.sql3
 bin/
