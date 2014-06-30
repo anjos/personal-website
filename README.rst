@@ -28,7 +28,7 @@ against a MySQL server. In such a case, you will need to get hold of the MySQL
 connection string. You can copy the one on your private server, if you have the
 right to do so::
 
-  $ scp andreanjos@my.andreanjos.org:my.andreanjos.org/anjos/personal/dbconfig.py anjos/personal
+  $ scp andreanjos@my.andreanjos.org:my.andreanjos.org/anjos.personal/anjos/personal/dbconfig.py anjos/personal
 Otherwise, here is a template (it should be placed on the same directory as
 ``settings.py`` is)::
 
