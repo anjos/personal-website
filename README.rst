@@ -18,7 +18,7 @@ Clone this package using the following command::
 After that, bootstrap the environment::
 
   $ python bootstrap.py
-  $ ./bin/buildout
+  $ MAX_CONCURRENCY=1 ./bin/buildout
 
 By default, the settings on the project are setup to work with a local
 ``db.sql3`` that should be placed at the root of the package. You can also work
