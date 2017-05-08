@@ -19,6 +19,7 @@ After that, create the environment::
 
   $ conda env create -f env.yml
   $ source activate chords
+  $ buildout
 
 By default, the settings on the project are setup to work with a local
 ``db.sql3`` that should be placed at the root of the package. You can also work
