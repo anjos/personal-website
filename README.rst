@@ -15,10 +15,10 @@ Clone this package using the following command::
   $ git submodule init
   $ git submodule update
 
-After that, bootstrap the environment::
+After that, create the environment::
 
-  $ python bootstrap.py
-  $ MAX_CONCURRENCY=1 ./bin/buildout
+  $ conda env create -f env.yml
+  $ source activate chords
 
 By default, the settings on the project are setup to work with a local
 ``db.sql3`` that should be placed at the root of the package. You can also work

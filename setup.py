@@ -34,14 +34,13 @@ setup(
       'pillow',
       'flup',
       'uuid',
-      'mysql-python',
       'python-openid',
 
       # others
       'django-robots',
       'django-openid-auth',
       'django-maintenancemode',
-      'django-rosetta',
+      #'django-rosetta',
 
       # mine
       'django-flatties',
